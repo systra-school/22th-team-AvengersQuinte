@@ -117,7 +117,7 @@
               </tr>
             </table>
           </div>
-            <div style="overflow: auto; height: 400px; width: 1088px; margin-left:80px; ">
+            <div style="overflow: auto; height: 400px; width: 1200px; margin-left:80px; ">
             <logic:iterate id="kinmuJissekiNyuryokuKakuninList" name="kinmuJissekiNyuryokuKakuninForm" property="kinmuJissekiNyuryokuKakuninList" indexId="idx">
               <table class="tblBody" border="1" cellpadding="0" cellspacing="0">
                 <tr>
