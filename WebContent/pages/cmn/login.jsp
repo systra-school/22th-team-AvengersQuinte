@@ -42,7 +42,6 @@
 		      <html:submit property="submit" value="送信" />
 		      <html:reset value="リセット" />
 		    </html:form>
-		    sh0001<BR>
 		    sh0002<BR>
 		    sh0003<BR>
 		    sh0004<BR>
