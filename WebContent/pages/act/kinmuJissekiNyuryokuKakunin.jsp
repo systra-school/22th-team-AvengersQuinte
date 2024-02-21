@@ -93,22 +93,22 @@
                 <td width="100px" align="center">
                   シフト
                 </td>
-                <td width="100px" align="center">
+                <td width="103px" align="center">
                   開始時刻
                 </td>
-                <td width="100px" align="center">
+                <td width="103px" align="center">
                   終了時刻
                 </td>
-                <td width="100px" align="center">
+                <td width="103px" align="center">
                   休憩
                 </td>
-                <td width="100px" align="center">
+                <td width="99px" align="center">
                   実働時間
                 </td>
-                <td width="100px" align="center">
+                <td width="101px" align="center">
                   時間外
                 </td>
-                <td width="100px" align="center">
+                <td width="99px" align="center">
                   休日
                 </td>
                 <td width="220px" align="center">
