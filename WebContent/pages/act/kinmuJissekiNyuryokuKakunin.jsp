@@ -81,16 +81,16 @@
             </div>
           </div>
           <div>
-            <div style="overflow: hidden; width: 1080px; margin-left:80px;">
+            <div style="overflow: auto; width: 1800px; margin-left:80px;">
             <table class="tblHeader" border="1" cellpadding="0" cellspacing="0">
               <tr>
-                <td width="80px" align="center">
+                <td width="73px" align="center">
                   日付
                 </td>
-                <td width="50px" align="center">
+                <td width="43px" align="center">
                   曜
                 </td>
-                <td width="100px" align="center">
+                <td width="81px" align="center">
                   シフト
                 </td>
                 <td width="103px" align="center">
@@ -99,25 +99,25 @@
                 <td width="103px" align="center">
                   終了時刻
                 </td>
-                <td width="103px" align="center">
+                <td width="102,5px" align="center">
                   休憩
                 </td>
-                <td width="99px" align="center">
+                <td width="79.5px" align="center">
                   実働時間
                 </td>
-                <td width="101px" align="center">
+                <td width="80px" align="center">
                   時間外
                 </td>
-                <td width="99px" align="center">
+                <td width="80px" align="center">
                   休日
                 </td>
-                <td width="220px" align="center">
+                <td width="303px" align="center">
                   備考
                 </td>
               </tr>
             </table>
           </div>
-            <div style="overflow: auto; height: 400px; width: 1200px; margin-left:80px; ">
+            <div style="overflow: auto; height: 400px; width: 1080px; margin-left:80px; ">
             <logic:iterate id="kinmuJissekiNyuryokuKakuninList" name="kinmuJissekiNyuryokuKakuninForm" property="kinmuJissekiNyuryokuKakuninList" indexId="idx">
               <table class="tblBody" border="1" cellpadding="0" cellspacing="0">
                 <tr>
