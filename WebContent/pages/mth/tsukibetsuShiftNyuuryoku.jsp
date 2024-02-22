@@ -271,7 +271,7 @@ if (listSize > intShowLength) {
                       </tr>
                       <logic:iterate offset="offset" length="<%=showLength %>" id="tsukibetsuShiftNyuuryokuBeanList" name="tsukibetsuShiftNyuuryokuForm" property="tsukibetsuShiftNyuuryokuBeanList">
                         <html:hidden name="tsukibetsuShiftNyuuryokuBeanList" property="registFlg" value="true" indexed="true"/>
-                        <tr height="<%=heightSize %>px">
+                        <tr height="25.4px">
                           <td width="40px" align="center" valign="middle">
                             <html:select property="shiftId01" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true">
                             <html:optionsCollection name="tsukibetsuShiftNyuuryokuForm"
