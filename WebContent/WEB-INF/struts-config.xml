@@ -195,7 +195,7 @@
         type="action.mst.ShiftMstMntRegistBackAction"
         name="shiftMstMntRegistForm"
         scope="session">
-        <forward name="success" path="/menu.do"/>
+        <forward name="success" path="/pages/mst/shiftMstMnt.jsp"/>
       </action>
 
       <!-- 出勤希望日確認初期表示 -->
