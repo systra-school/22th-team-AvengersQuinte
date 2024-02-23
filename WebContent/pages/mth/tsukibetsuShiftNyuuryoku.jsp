@@ -105,7 +105,7 @@ if (listSize > intShowLength) {
           </tr>
         </table>
       </div>
-      <div id="gymBody" style="overflow: hidden;">
+      <div id="gymBody" style="overflow: auto;">
 <html:form action="/tsukibetsuShiftNyuuryokuInit" >
           <div style="margin-left:50px;">
             <div style="height: 25px;">
@@ -537,13 +537,13 @@ if (listSize > intShowLength) {
             </table>
           </div>
         </html:form>
+      </div>
+      <div id="footer">
         <div style="margin-left:50px;">
           <input value="–}—á•\Ž¦" type="button" class="lngButton"  onclick="openWindow()" />
           <input value="Šî–{ƒVƒtƒg”½‰f" type="button" class="lngButton"  />
           <input value="o‹ÎŠó–]“ú”½‰f" type="button" class="lngButton"  onclick="submitShukkinKibou()" />
         </div>
-      </div>
-      <div id="footer">
         <table>
           <tr>
             <td id="footLeft">
