@@ -61,7 +61,7 @@ errorbody {
 * �Ɩ�body��`
 */
 #gymBody {
-    height: 500px;
+    height: 495px;
     overflow: hidden;
 }
 
@@ -84,7 +84,7 @@ errorbody {
 }
 #footRight {
     float:left;
-    width:400px;
+    width:1170px;
     text-align:right;
 }
 /*
