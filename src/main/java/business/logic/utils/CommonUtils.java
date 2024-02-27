@@ -1,11 +1,7 @@
 package business.logic.utils;
 
-import static constant.DbConstant.M_shain;
-import static constant.CommonConstant.DayOfWeek;
-
 import java.sql.SQLException;
 import java.sql.Timestamp;
-import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -17,8 +13,9 @@ import java.util.List;
 import java.util.Set;
 
 import business.db.dao.utils.CommonUtilsDao;
-
 import constant.CommonConstant;
+import constant.CommonConstant.DayOfWeek;
+import constant.DbConstant.M_shain;
 import constant.DbConstant.M_shift;
 import exception.CommonException;
 import form.common.DateBean;
@@ -181,7 +178,7 @@ public class CommonUtils {
         }
 
         // ＩＤの数字部分
-        String numId = maxId.substring(2, 6);
+        String numId = maxId;
         int intNumId = Integer.parseInt(numId);
 
         if (intNumId >= 9999) {
@@ -189,15 +186,15 @@ public class CommonUtils {
         }
 
         StringBuffer strBuf = new StringBuffer();
-        strBuf.append(maxId.substring(0, 2));
+        //strBuf.append(maxId);
 
         // ＩＤ加算処理
         intNumId ++;
 
         // 先頭0埋め処理
-        DecimalFormat df = new DecimalFormat();
-        df.applyLocalizedPattern("0000");
-        strBuf.append(df.format(intNumId));
+//        DecimalFormat df = new DecimalFormat();
+//        df.applyLocalizedPattern("0000");
+        strBuf.append(intNumId);
 
         return strBuf.toString();
 
