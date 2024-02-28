@@ -30,6 +30,15 @@ public class ShukkinKibouNyuuryokuForm extends ActionForm {
     private Map<String, String> shiftCmbMap;
     /** 年月コンボ */
     private Map<String, String> yearMonthCmbMap;
+    
+    /** ページング用 */
+    private String paging;
+    /** オフセット */
+    private int offset;
+    /** 表示ページ */
+    private int cntPage;
+    /** 最大ページ */
+    private int maxPage;
 
     /**
      * @return yearMonth
@@ -92,5 +101,29 @@ public class ShukkinKibouNyuuryokuForm extends ActionForm {
     public void setYearMonthCmbMap(Map<String, String> yearMonthCmbMap) {
         this.yearMonthCmbMap = yearMonthCmbMap;
     }
+	public String getPaging() {
+		return paging;
+	}
+	public int getOffset() {
+		return offset;
+	}
+	public int getCntPage() {
+		return cntPage;
+	}
+	public int getMaxPage() {
+		return maxPage;
+	}
+	public void setPaging(String paging) {
+		this.paging = paging;
+	}
+	public void setOffset(int offset) {
+		this.offset = offset;
+	}
+	public void setCntPage(int cntPage) {
+		this.cntPage = cntPage;
+	}
+	public void setMaxPage(int maxPage) {
+		this.maxPage = maxPage;
+	}
 
 }

@@ -6,10 +6,10 @@
 <%@page import="form.shk.ShukkinKibouKakuninForm"%>
 <%
 /**
- * ファイル名：shukkinKibouNyuuryoku.jsp
+ * ファイル名：shukkinKibouKakunin.jsp
  *
  * 変更履歴
- * 1.0  2010/09/13 Kazuya.Naraki
+ * 1.0  2024/02/22 Ayaka
  */
 %>
 <%@page contentType="text/html; charset=Shift_JIS" pageEncoding="Shift_JIS"%>

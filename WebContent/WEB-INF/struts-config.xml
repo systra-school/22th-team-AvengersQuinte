@@ -206,6 +206,7 @@
         scope="session">
         <forward name="success" path="/pages/shk/shukkinKibouKakunin.jsp"/>
       </action>
+      
       <!-- 出勤希望日確認 -->
       <action
         path="/shukkinKibouKakuninSearch"
@@ -254,6 +255,21 @@
         scope="session">
         <forward name="success"  path="/menu.do"/>
       </action>
+      
+      
+      
+      
+       <!-- 出勤希望日入力初期表示 -->
+      <action
+        path="/shukkinKibouNyuuryokuInit"
+        type="action.shk.ShukkinKibouNyuuryokuInitAction"
+        name="shukkinKibouNyuuryokuForm"
+        scope="session">
+        <forward name="success" path="/pages/shk/shukkinKibouNyuuryoku.jsp"/>
+      </action>
+      
+      
+      
 
       <!-- 日別シフト初期表示 -->
       <action

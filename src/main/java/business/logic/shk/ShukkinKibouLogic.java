@@ -1,5 +1,5 @@
-/**
- * ファイル名：ShukkinKibouLogic.java
+/* 
+* ファイル名：ShukkinKibouLogic.java
  *
  * 変更履歴
  * 1.0  2010/10/06 Kazuya.Naraki
