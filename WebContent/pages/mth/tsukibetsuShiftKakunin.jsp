@@ -28,7 +28,7 @@
 <bean:define id="maxPage" name="tsukibetsuShiftKakuninForm" property="maxPage" type="java.lang.Integer"/>
 
 <%
-final int heightSize = 22;
+final int heightSize = 25;
 
 int intShowLength = Integer.parseInt(showLength);
 
