@@ -2,195 +2,200 @@
 * body��`
 */
 body {
-    background-color: #FFFFFF;
-    overflow: hidden;
-}
-errorbody {
-    background-color: red;
-}
-#wrapper {
-    width:100%;
-    padding:0px;
+	background-color: #FFFFFF;
+	overflow: hidden;
 }
 
+errorbody {
+	background-color: red;
+}
+
+#wrapper {
+	width: 100%;
+	padding: 0px;
+}
 
 /*
 * �w�b�_�[�A�t�b�^�[���ʒ�`
 */
-#header,#gymBody,#footer {
-    width: 100%;
-    margin: 0px;
-    padding: 5px;
-    background-color: #66CCFF;
+#header, #gymBody, #footer {
+	width: 100%;
+	margin: 0px;
+	padding: 5px;
+	background-color: #66CCFF;
 }
 
 /*
 * �w�b�_�[��`
 */
 #header {
-    top: 2px;
-    height: 40px;
-    width:100%;
+	top: 2px;
+	height: 40px;
+	width: 100%;
 }
-#headLeft {
-    width:200px;
-    text-align:left;
-}
-#headCenter {
-    font-size: 24px;
-    color: #FFFF00;
-    width:800px;
-    text-align:center;
 
+#headLeft {
+	width: 200px;
+	text-align: left;
 }
+
+#headCenter {
+	font-size: 24px;
+	color: #FFFF00;
+	width: 800px;
+	text-align: center;
+}
+
 #headRight {
-    width:200px;
-    text-align:right;
+	width: 200px;
+	text-align: right;
 }
 /*
 * ���j���[��ʂ̃{�^��
 */
 .menuBlock {
-    margin-left:30px;
-    float:left;
-    text-align:"center";
-    padding:30px;
+	margin-left: 30px;
+	float: left;
+	text-align: "center";
+	padding: 30px;
 }
 
 /*
 * �Ɩ�body��`
 */
 #gymBody {
-    height: 495px;
-    overflow: hidden;
+	height: 495px;
+	overflow: hidden;
 }
 
 /*
 * �t�b�^�[��`
 */
 #footer {
-    bottom: 1%;
-    height: 90px;
+	bottom: 1%;
+	height: 90px;
 }
+
 #footLeft {
-    float:left;
-    width:400px;
-    text-align:left;
+	float: left;
+	width: 400px;
+	text-align: left;
 }
+
 #footCenter {
-    float:left;
-    width:400px;
-    text-align:center;
+	float: left;
+	width: 400px;
+	text-align: center;
 }
+
 #footRight {
-    float:left;
-    width:1170px;
-    text-align:right;
+	float: left;
+	width: 1170px;
+	text-align: right;
 }
 /*
 * �G���[�y�[�W �w�b�_�[�A�t�b�^�[���ʒ�`
 */
-#errorHeader,#errorGymBody,#errorFooter {
-    width: 100%;
-    margin: 0px;
-    padding: 5px;
-    background-color: #FFA4C6;
+#errorHeader, #errorGymBody, #errorFooter {
+	width: 100%;
+	margin: 0px;
+	padding: 5px;
+	background-color: #FFA4C6;
 }
 
 /*
 * �G���[�y�[�W �w�b�_�[��`
 */
 #errorHeader {
-    top: 1%;
-    height: 6%;
-    text-align: center;
-    font-size: 24px;
-    color: #FFFF00;
+	top: 1%;
+	height: 6%;
+	text-align: center;
+	font-size: 24px;
+	color: #FFFF00;
 }
 
 /*
 * �G���[�y�[�W �Ɩ�body��`
 */
 #errorGymBody {
-    top: 8%;
-    height: 80%;
-    overflow: auto;
-    font-weight: bold;
-    color: black;
+	top: 8%;
+	height: 80%;
+	overflow: auto;
+	font-weight: bold;
+	color: black;
 }
 
 /*
 * �G���[�y�[�W �t�b�^�[��`
 */
 #errorFooter {
-    bottom: 1%;
-    height: 10%;
+	bottom: 1%;
+	height: 10%;
 }
 
 /*
 * �{�^���T�C�Y�ʏ�
 */
 .smlButton {
-    width: 100px;
-    height: 30px;
+	width: 100px;
+	height: 30px;
 }
 
 /*
 * �{�^���T�C�Y��
 */
 .bigButton {
-    width: 200px;
-    height: 50px;
+	width: 200px;
+	height: 50px;
 }
 
 /*
 * �{�^���T�C�Y�����O
 */
 .lngButton {
-    width: 200px;
-    height: 30px;
+	width: 200px;
+	height: 30px;
 }
-
 
 /*
 * �߂�{�^���̃X�^�C��
 */
 .backBtn {
-    top: 5px;
-    left: 10px;
+	top: 5px;
+	left: 10px;
 }
 
 /*
 * �e�[�u���w�b�_�[�̃X�^�C��
 */
 .tblHeader {
-    background-color: #98FB98;
-    font-weight: bold;
+	background-color: #98FB98;
+	font-weight: bold;
 }
 
 /*
 * �e�[�u���{�f�B�̃X�^�C��
 */
 .tblBody {
-    background-color: #E0FFFF;
+	background-color: #E0FFFF;
 }
 /*
 * �����F ��
 */
 .fontBlack {
-    color: black;
+	color: black;
 }
 
 /*
 * �����F ��
 */
 .fontBlue {
-    color: blue;
+	color: blue;
 }
 
 /*
 * �����F ��
 */
 .fontRed {
-    color: red;
+	color: red;
 }
