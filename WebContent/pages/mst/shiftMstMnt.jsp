@@ -166,16 +166,16 @@
           <div style="width: 600px; margin-left:300px;">
             <table class="tblHeader" border="1" cellpadding="0" cellspacing="0">
               <tr>
-                <td width="100px" align="center">
+                <td width="102px" align="center">
                   シフト名
                 </td>
                 <td width="70px" align="center">
                   シンボル
                 </td>
-                <td width="230px" align="center">
+                <td width="234px" align="center">
                   時間
                 </td>
-                <td width="100px" align="center">
+                <td width="103px" align="center">
                   休憩
                 </td>
                 <td width="70px" align="center">
