@@ -106,7 +106,7 @@ if (listSize > intShowLength) {
           </tr>
         </table>
       </div>
-      <div id="gymBody" style="overflow: auto;">
+      <div id="gymBody" style="overflow: hidden;">
 <html:form action="/tsukibetsuShiftNyuuryokuInit" >
           <div style="margin-left:50px;">
             <div style="height: 25px;">
@@ -147,7 +147,7 @@ if (listSize > intShowLength) {
                   </table>
                 </td>
                 <td>
-                  <div style="overflow-x: auto;overflow-y: hidden; width:985px;height:460px; text-align:center;">
+                  <div style="overflow-x: auto;overflow-y: hidden; width:985px;height:482px; text-align:center;">
                     <table class="tblHeader" border="1" cellpadding="0" cellspacing="0">
                       <tr height="<%=heightSize %>px">
                         <td width="40px" align="center">
