@@ -68,7 +68,7 @@
           </tr>
         </table>
       </div>
-      <div id="gymBody" style="overflow: hidden;">
+      <div id="gymBody" style="overflow: auto;">
         <div style="margin-left:10px;">
           <html:form action="/shukkinKibouKakuninInit" >
             ï\é¶îNåéÅF
