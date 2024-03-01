@@ -23,7 +23,7 @@
     int bodyRightDivHeight = 0;
     int bodyLeftDivHeight = 0;
     // ボディテーブルの td の幅
-    int tdWidth = 150;
+    int tdWidth = 176;
     // ボディテーブルの tr の縦
     int trHeight = 50;
     // 縦スクロールバーの幅
@@ -101,10 +101,10 @@
             <table border="0" cellpadding="0" cellspacing="0">
               <tr>
                 <td width="154px" >
-                  <div id="headLeftTbl" style="overflow-x: hidden;overflow-y: hidden;width: 154px;">
+                  <div id="headLeftTbl" style="overflow-x: hidden;overflow-y: hidden;">
                     <table border="1" cellpadding="0" cellspacing="0" class="tblHeader">
                       <tr>
-                        <td width="153px" nowrap="nowrap" align="center">
+                        <td width="176px" nowrap="nowrap" align="center">
                         時間
                         </td>
                       </tr>
@@ -129,7 +129,7 @@
             <table border="0" cellpadding="0" cellspacing="0">
               <tr height="100%">
                 <td valign="top">
-                  <div id="bodyLeftTbl" style="overflow-x: auto;overflow-y: hidden;width: 154px;height:418px; ">
+                  <div id="bodyLeftTbl" style="overflow-x: auto;overflow-y: hidden;height:402px; ">
                     <table border="1" cellpadding="0" cellspacing="0" class="tblBody">
                       <tr height="<%=trHeight %>px">
                         <td width="<%=tdWidth %>px" nowrap="nowrap" align="center">
