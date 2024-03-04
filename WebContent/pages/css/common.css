@@ -10,6 +10,14 @@ errorbody {
 	background-color: red;
 }
 
+/*
+* ↓　2024/03/04 追加　矢葺
+*/
+select {
+	border-color : #000000 #dcdcdc #dcdcdc #000000;
+	border-width: medium
+}
+
 #wrapper {
 	width: 100%;
 	padding: 0px;
@@ -189,6 +197,7 @@ errorbody {
 .tblBody {
 	background-color: #E0FFFF;
 }
+
 /*
 * 文字色 黒
 */
