@@ -92,6 +92,9 @@ errorbody {
 	float: left;
 	width: 1170px;
 	text-align: right;
+	position: fixed;
+	top: 675px;
+	left: 55x;
 }
 /*
 * �G���[�y�[�W �w�b�_�[�A�t�b�^�[���ʒ�`
@@ -198,8 +201,4 @@ errorbody {
 */
 .fontRed {
 	color: red;
-}
-
-@media only screen and(max-width:600px){
-	
 }
