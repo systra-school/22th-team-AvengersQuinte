@@ -1,5 +1,5 @@
 /*
-* body��`
+* body定義
 */
 body {
 	background-color: #FFFFFF;
@@ -16,7 +16,7 @@ errorbody {
 }
 
 /*
-* �w�b�_�[�A�t�b�^�[���ʒ�`
+* ヘッダー、フッター共通定義
 */
 #header, #gymBody, #footer {
 	width: 100%;
@@ -26,7 +26,7 @@ errorbody {
 }
 
 /*
-* �w�b�_�[��`
+* ヘッダー定義
 */
 #header {
 	top: 2px;
@@ -51,7 +51,7 @@ errorbody {
 	text-align: right;
 }
 /*
-* ���j���[��ʂ̃{�^��
+* メニュー画面のボタン
 */
 .menuBlock {
 	margin-left: 30px;
@@ -61,7 +61,7 @@ errorbody {
 }
 
 /*
-* �Ɩ�body��`
+* 業務body定義
 */
 #gymBody {
 	height: 600px;
@@ -69,7 +69,7 @@ errorbody {
 }
 
 /*
-* �t�b�^�[��`
+* フッター定義
 */
 #footer {
 	bottom: 1%;
@@ -97,7 +97,7 @@ errorbody {
 	
 }
 /*
-* �G���[�y�[�W �w�b�_�[�A�t�b�^�[���ʒ�`
+* エラーページ ヘッダー、フッター共通定義
 */
 #errorHeader, #errorGymBody, #errorFooter {
 	width: 100%;
@@ -107,7 +107,7 @@ errorbody {
 }
 
 /*
-* �G���[�y�[�W �w�b�_�[��`
+* エラーページ ヘッダー定義
 */
 #errorHeader {
 	top: 1%;
@@ -118,7 +118,7 @@ errorbody {
 }
 
 /*
-* �G���[�y�[�W �Ɩ�body��`
+* エラーページ 業務body定義
 */
 #errorGymBody {
 	top: 8%;
@@ -129,7 +129,7 @@ errorbody {
 }
 
 /*
-* �G���[�y�[�W �t�b�^�[��`
+* エラーページ フッター定義
 */
 #errorFooter {
 	bottom: 1%;
@@ -137,7 +137,7 @@ errorbody {
 }
 
 /*
-* �{�^���T�C�Y�ʏ�
+* ボタンサイズ通常
 */
 .smlButton {
 	width: 100px;
@@ -148,7 +148,7 @@ errorbody {
 }
 
 /*
-* �{�^���T�C�Y��
+* ボタンサイズ大
 */
 .bigButton {
 	width: 200px;
@@ -158,7 +158,7 @@ errorbody {
 }
 
 /*
-* �{�^���T�C�Y�����O
+* ボタンサイズロング
 */
 .lngButton {
 	width: 200px;
@@ -168,7 +168,7 @@ errorbody {
 }
 
 /*
-* �߂�{�^���̃X�^�C��
+* 戻るボタンのスタイル
 */
 .backBtn {
 	top: 5px;
@@ -176,7 +176,7 @@ errorbody {
 }
 
 /*
-* �e�[�u���w�b�_�[�̃X�^�C��
+* テーブルヘッダーのスタイル
 */
 .tblHeader {
 	background-color: #98FB98;
@@ -184,27 +184,27 @@ errorbody {
 }
 
 /*
-* �e�[�u���{�f�B�̃X�^�C��
+* テーブルボディのスタイル
 */
 .tblBody {
 	background-color: #E0FFFF;
 }
 /*
-* �����F ��
+* 文字色 黒
 */
 .fontBlack {
 	color: black;
 }
 
 /*
-* �����F ��
+* 文字色 青
 */
 .fontBlue {
 	color: blue;
 }
 
 /*
-* �����F ��
+* 文字色 赤
 */
 .fontRed {
 	color: red;
