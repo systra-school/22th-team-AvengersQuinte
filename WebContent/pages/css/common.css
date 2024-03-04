@@ -142,6 +142,9 @@ errorbody {
 .smlButton {
 	width: 100px;
 	height: 30px;
+	border-color: #ffffff #000000 #000000 #ffffff;
+	background-color: #c0c0c0;
+	
 }
 
 /*
@@ -150,6 +153,8 @@ errorbody {
 .bigButton {
 	width: 200px;
 	height: 50px;
+	border-color : #ffffff #000000 #000000 #ffffff;
+	background-color: #c0c0c0;
 }
 
 /*
@@ -158,6 +163,8 @@ errorbody {
 .lngButton {
 	width: 200px;
 	height: 30px;
+	border-color : #ffffff #000000 #000000 #ffffff;
+	background-color: #c0c0c0;
 }
 
 /*
