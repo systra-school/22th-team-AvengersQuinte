@@ -17,13 +17,13 @@
             <table>
               <tr>
                   <td id="headLeft">
-                    　
+                    
                   </td>
                   <td id="headCenter">
                     ログイン
                   </td>
                   <td id="headRight">
-                    　
+                    
                   </td>
               </tr>
             </table>

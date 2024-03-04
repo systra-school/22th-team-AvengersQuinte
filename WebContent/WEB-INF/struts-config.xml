@@ -268,6 +268,86 @@
         <forward name="success" path="/pages/shk/shukkinKibouNyuuryoku.jsp"/>
       </action>
       
+      <!-- 出勤希望日確認(改ページ) -->
+      <action
+        path="/shukkinKibouNyuuryokuPage"
+        type="action.shk.ShukkinKibouNyuuryokuPageAction"
+        name="shukkinKibouNyuuryokuForm"
+        scope="session">
+        <forward name="success" path="/pages/shk/shukkinKibouNyuuryoku.jsp"/>
+      </action>
+      
+      <!-- 出勤希望日入力（サブ画面） -->
+      <action
+        path="/shukkinKibouNyuuryokuSubSearch"
+        type="action.shk.ShukkinKibouNyuuryokuSearchAction"
+        name="shukkinKibouNyuuryokuForm"
+        scope="session">
+        <forward name="success" path="/pages/shk/shukkinKibouNyuuryokuSub.jsp"/>
+      </action>
+      
+      
+      
+      
+      
+       <!-- 出勤希望日入力初期表示 -->
+      <action
+        path="/shukkinKibouNyuuryokuInit"
+        type="action.shk.ShukkinKibouNyuuryokuInitAction"
+        name="shukkinKibouNyuuryokuForm"
+        scope="session">
+        <forward name="success" path="/pages/shk/shukkinKibouNyuuryoku.jsp"/>
+      </action>
+      
+      <!-- 出勤希望日入力 -->
+      <action
+        path="/shukkinKibouNyuuryokuSearch"
+        type="action.shk.ShukkinKibouNyuuryokuSearchAction"
+        name="shukkinKibouNyuuryokuForm"
+        scope="session">
+        <forward name="success" path="/pages/shk/shukkinKibouNyuuryoku.jsp"/>
+      </action>
+      <!-- 出勤希望日確認(改ページ) -->
+      <action
+        path="/shukkinKibouNyuuryokuPage"
+        type="action.shk.ShukkinKibouNyuuryokuPageAction"
+        name="shukkinKibouNyuuryokuForm"
+        scope="session">
+        <forward name="success" path="/pages/shk/shukkinKibouNyuuryoku.jsp"/>
+      </action>
+      <!-- 出勤希望日確認（サブ画面）初期表示 -->
+      <action
+        path="/shukkinKibouNyuuryokuSubInit"
+        type="action.shk.ShukkinKibouNyuuryokuInitAction"
+        name="shukkinKibouNyuuryokuForm"
+        scope="session">
+        <forward name="success" path="/pages/shk/shukkinKibouNyuuryokuSub.jsp"/>
+      </action>
+      <!-- 出勤希望日確認（サブ画面） -->
+      <action
+        path="/shukkinKibouNyuuryokuSubSearch"
+        type="action.shk.ShukkinKibouNyuuryokuSearchAction"
+        name="shukkinKibouNyuuryokuForm"
+        scope="session">
+        <forward name="success" path="/pages/shk/shukkinKibouNyuuryokuSub.jsp"/>
+      </action>
+      <!-- 出勤希望日確認改ページ（サブ画面） -->
+      <action
+        path="/shukkinKibouNyuuryokuSubPage"
+        type="action.shk.ShukkinKibouNyuuryokuPageAction"
+        name="shukkinKibouNyuuryokuForm"
+        scope="session">
+        <forward name="success" path="/pages/shk/shukkinKibouNyuuryokuSub.jsp"/>
+      </action>
+      <!-- 出勤希望日確認戻る -->
+      <action
+        path="/shukkinKibouNyuuryokuBack"
+        type="action.shk.ShukkinKibouNyuuryokuBackAction"
+        name="shukkinKibouNyuuryokuForm"
+        scope="session">
+        <forward name="success"  path="/menu.do"/>
+      </action>
+      
       
       
 

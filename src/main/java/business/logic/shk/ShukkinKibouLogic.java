@@ -27,7 +27,7 @@ public class ShukkinKibouLogic {
      * @return 出勤希望Dtoリストのリスト
      * @author naraki
      */
-    public List<List<ShukkinKibouKakuninDto>> getShukkinKibouKakuninDtoList(String yearMonth) throws SQLException{
+    public List<List<ShukkinKibouKakuninDto>> getShukkinKibouKakuninDtoList(String yearMonth ) throws SQLException{
 
         // Dao
         ShukkinKibouDao dao = new ShukkinKibouDao();
@@ -37,4 +37,15 @@ public class ShukkinKibouLogic {
 
         return kakuninDtoListList;
     }
+//    
+//    public List<List<ShukkinKibouNyuuryokuDto>> getShukkinKibouNyuuryokuDtoList(String yearMonth) throws SQLException{
+//
+//        // Dao
+//        ShukkinKibouDao dao = new ShukkinKibouDao();
+//
+//        // シフト情報を取得する。
+//        List<List<ShukkinKibouNyuuryokuDto>> nyuuryokuDtoListList = dao.getShiftTblData(yearMonth);
+//
+//        return nyuuryokuDtoListList;
+//    }
 }
