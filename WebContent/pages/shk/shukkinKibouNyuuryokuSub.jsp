@@ -32,28 +32,6 @@
     <script type="text/javascript" src="/kikin/pages/js/checkCommon.js"></script>
     <script type="text/javascript" src="/kikin/pages/js/message.js"></script>
     <script type="text/javascript" language="Javascript1.1">
-    <!--
-    /**
-     * 検索
-     */
-    function submitSearch() {
-        doSubmit('/kikin/shukkinKibouNyuuryokuSearch.do');
-    }
-    
-    * 登録
-    */
-   function submitRegist() {
-       // サブミット
-       doSubmit('/kikin/shukkinKibouNyuuryokuRegist.do');
-   }
-    
-    /**
-     * サブウィンドウを開く
-     */
-    function openWindow(){
-        window.open("/kikin/shiftHanrei.do?param=", null, "menubar=no, toolbar=no, scrollbars=auto, resizable=yes, width=520px, height=650px");
-    }
-    -->
     </script>
     <title>出勤希望入力画面</title>
 
@@ -65,7 +43,7 @@
         <table>
           <tr>
             <td id="headLeft">
-              <input value="戻る" type="button" class="smlButton"  onclick="doSubmit('/kikin/shukkinKibouNyuuryokuBack.do')" />
+              <input value="戻る" type="button" class="smlButton"  onclick="doSubmit('/kikin/shukkinKibouKakuninBack.do')" />
             </td>
             <td id="headCenter">
               出勤希望入力
@@ -86,7 +64,10 @@
                                     value="key"
                                     label="value"/>
             </html:select>
-   
+            <html:link href="/kikin/shukkinKibouNyuuryokuSubPage.do?paging=back">前へ</html:link>
+            <html:link href="/kikin/shukkinKibouNyuuryokuSubPage.do?paging=next">次へ</html:link>
+            <bean:write name="shukkinKibouNyuuryokuForm" property="cntPage"/>/
+            <bean:write name="shukkinKibouNyuuryokuForm" property="maxPage"/>
             <div>
             <table width="1200px" cellpadding="0" cellspacing="0">
                 <tr>
@@ -105,7 +86,7 @@
                       
                       <%--社員名表示 --%>
                       <logic:iterate offset="offset" length="<%=showLength %>" id="shukkinKibouNyuuryokuBeanList" name="shukkinKibouNyuuryokuForm" property="shukkinKibouNyuuryokuBeanList">
-                      <logic:equal name="shukkinKibouNyuuryokuBeanList" property="shainId" value='<%= String.valueOf(request.getAttribute("shainId")) %>'>
+                                               <logic:equal name="shukkinKibouNyuuryokuBeanList" property="shainId" value='<%= String.valueOf(request.getAttribute("shainId")) %>'>
                       
                         <logic:notEmpty name="shukkinKibouNyuuryokuBeanList" property="shainId">
                         
