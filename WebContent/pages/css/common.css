@@ -18,6 +18,15 @@ select {
 	border-width: medium
 }
 
+/*
+* ↓　2024/03/05 追加　矢葺
+*/
+input[type="password"],
+input[type="text"] {
+    border-color: #000000 #dcdcdc #dcdcdc #000000;
+    border-width: medium;
+}
+
 #wrapper {
 	width: 100%;
 	padding: 0px;
