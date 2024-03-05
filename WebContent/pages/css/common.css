@@ -167,7 +167,9 @@ select {
 	border-color: #ffffff #000000 #000000 #ffffff;
 	background-color: #c0c0c0;
 }
-
+.bigButton:hover{
+	background-color: #ffff80;
+}
 /*
 * ボタンサイズロング
 */
