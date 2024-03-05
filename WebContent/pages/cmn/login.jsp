@@ -43,7 +43,6 @@
 		      <html:reset value="ƒŠƒZƒbƒg" />
 		    </html:form>
 
-		    sh0005<BR>
 		  </div>
 		</div>
 	    <div id="footer">
