@@ -60,8 +60,10 @@ select {
 }
 
 #headRight {
-	width: 200px;
+	width: 900px;
 	text-align: right;
+	height: 80px;
+	
 }
 /*
 * メニュー画面のボタン
