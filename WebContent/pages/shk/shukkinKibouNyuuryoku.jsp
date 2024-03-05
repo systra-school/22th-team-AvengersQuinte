@@ -32,7 +32,7 @@
     <script type="text/javascript" src="/kikin/pages/js/checkCommon.js"></script>
     <script type="text/javascript" src="/kikin/pages/js/message.js"></script>
     <script type="text/javascript" language="Javascript1.1">
-    <!--
+    
     /**
      * åüçı
      */
@@ -40,6 +40,7 @@
         doSubmit('/kikin/shukkinKibouNyuuryokuSearch.do');
     }
     
+    /*
     * ìoò^
     */
    function submitRegist() {
@@ -53,7 +54,7 @@
     function openWindow(){
         window.open("/kikin/shiftHanrei.do?param=", null, "menubar=no, toolbar=no, scrollbars=auto, resizable=yes, width=520px, height=650px");
     }
-    -->
+    
     </script>
     <title>èoãŒäÛñ]ì¸óÕâÊñ </title>
 
@@ -529,7 +530,7 @@
             </div>
           </html:form>
           <div style="margin-left:50px;">
-            <input value="ñ}ó·ï\é¶" type="button" class="lngButton"  onclick="openWindow()" />
+            <input value="ñ}ó·ï\é¶" type="button" class="lngButton" onclick="openWindow()" />
           </div>
         </div>
       </div>
@@ -541,11 +542,11 @@
             </td>
             <td id="footCenter" style="text-align: right;">
             
-            <input value="èoãŒäÛñ]ì˙éQè∆" type="button" class="lngButton"  onclick="openWindow()" />
+            <input value="èoãŒäÛñ]ì˙éQè∆" type="button" class="lngButton" onclick="submitSearch()" />
 
             </td>
             <td id="footRight">
-              <input value="ìoò^" type="button" class="smlButton"  onclick="submitRegist()" />
+              <input value="ìoò^" type="button" class="smlButton" onclick="submitRegist()" />
             </td>
           </tr>
         </table>

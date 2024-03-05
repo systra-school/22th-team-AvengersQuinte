@@ -259,7 +259,7 @@
       
       
       
-       <!-- 出勤希望日入力初期表示 -->
+       <!-- 出勤希望日入力初期表示
       <action
         path="/shukkinKibouNyuuryokuInit"
         type="action.shk.ShukkinKibouNyuuryokuInitAction"
@@ -267,8 +267,8 @@
         scope="session">
         <forward name="success" path="/pages/shk/shukkinKibouNyuuryoku.jsp"/>
       </action>
-      
-      <!-- 出勤希望日確認(改ページ) -->
+       -->
+      <!-- 出勤希望日確認(改ページ) 
       <action
         path="/shukkinKibouNyuuryokuPage"
         type="action.shk.ShukkinKibouNyuuryokuPageAction"
@@ -276,8 +276,8 @@
         scope="session">
         <forward name="success" path="/pages/shk/shukkinKibouNyuuryoku.jsp"/>
       </action>
-      
-      <!-- 出勤希望日入力（サブ画面） -->
+       -->
+      <!-- 出勤希望日入力（サブ画面） 
       <action
         path="/shukkinKibouNyuuryokuSubSearch"
         type="action.shk.ShukkinKibouNyuuryokuSearchAction"
@@ -286,7 +286,7 @@
         <forward name="success" path="/pages/shk/shukkinKibouNyuuryokuSub.jsp"/>
       </action>
       
-      
+       -->
       
       
       
@@ -307,7 +307,7 @@
         scope="session">
         <forward name="success" path="/pages/shk/shukkinKibouNyuuryoku.jsp"/>
       </action>
-      <!-- 出勤希望日入力(改ページ) -->
+      <!-- 出勤希望日確認(改ページ) -->
       <action
         path="/shukkinKibouNyuuryokuPage"
         type="action.shk.ShukkinKibouNyuuryokuPageAction"
@@ -315,7 +315,7 @@
         scope="session">
         <forward name="success" path="/pages/shk/shukkinKibouNyuuryoku.jsp"/>
       </action>
-      <!-- 出勤希望日入力（サブ画面）初期表示 -->
+      <!-- 出勤希望日確認（サブ画面）初期表示 -->
       <action
         path="/shukkinKibouNyuuryokuSubInit"
         type="action.shk.ShukkinKibouNyuuryokuInitAction"
@@ -323,7 +323,7 @@
         scope="session">
         <forward name="success" path="/pages/shk/shukkinKibouNyuuryokuSub.jsp"/>
       </action>
-      <!-- 出勤希望日入力（サブ画面） -->
+      <!-- 出勤希望日確認（サブ画面） -->
       <action
         path="/shukkinKibouNyuuryokuSubSearch"
         type="action.shk.ShukkinKibouNyuuryokuSearchAction"
@@ -331,7 +331,7 @@
         scope="session">
         <forward name="success" path="/pages/shk/shukkinKibouNyuuryokuSub.jsp"/>
       </action>
-      <!-- 出勤希望日入力改ページ（サブ画面） -->
+      <!-- 出勤希望日確認改ページ（サブ画面） -->
       <action
         path="/shukkinKibouNyuuryokuSubPage"
         type="action.shk.ShukkinKibouNyuuryokuPageAction"
@@ -339,21 +339,21 @@
         scope="session">
         <forward name="success" path="/pages/shk/shukkinKibouNyuuryokuSub.jsp"/>
       </action>
-      <!-- 出勤希望日入力戻る -->
+      <!-- 出勤希望日確認戻る -->
       <action
         path="/shukkinKibouNyuuryokuBack"
         type="action.shk.ShukkinKibouNyuuryokuBackAction"
         name="shukkinKibouNyuuryokuForm"
         scope="session">
-        <forward name="success"  path="/menu.do"/>
+        <forward name="success"  path="/pages/cmn/menu.do"/>
       </action>
-       <!-- 出勤希望日入力登録 -->
+      <!-- 出勤希望日入力確認登録処理 -->
       <action
         path="/shukkinKibouNyuuryokuRegist"
         type="action.shk.ShukkinKibouNyuuryokuRegistAction"
         name="shukkinKibouNyuuryokuForm"
         scope="session">
-        <forward name="success"  path="/pages/shk/shukkinKibouNyuuryoku.jsp"/>
+        <forward name="success" path="/pages/shk/shukkinKibouNyuuryoku.jsp"/>
       </action>
       
       
