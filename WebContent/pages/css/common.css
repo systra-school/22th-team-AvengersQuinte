@@ -163,7 +163,8 @@ input[type="text"] {
 * ボタンサイズ通常
 */
 .smlButton {
-	position: fixed;
+	position: relative;
+	bottom: 20px;
 	width: 100px;
 	height: 30px;
 	border-color: #ffffff #000000 #000000 #ffffff;
