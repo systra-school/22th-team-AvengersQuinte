@@ -509,6 +509,14 @@
         scope="session">
         <forward name="success" path="/pages/mth/tsukibetsuShiftNyuuryoku.jsp"/>
       </action>
+      <!-- 月別シフト基本反映 -->
+       <action
+        path="/tsukibetsuShiftNyuuryokuKihon"
+        type="action.mth.TsukibetsuShiftNyuuryokuKihonHaneiAction"
+        name="tsukibetsuShiftNyuuryokuForm"
+        scope="session">
+        <forward name="success" path="/pages/mth/tsukibetsuShiftNyuuryoku.jsp"/>
+      </action>
       <!-- 月別シフト登録 -->
       <action
         path="/tsukibetsuShiftNyuuryokuRegist"
