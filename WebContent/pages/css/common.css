@@ -61,9 +61,8 @@ input[type="text"] {
 	position: fixed;
 	font-size: 24px;
 	color: #FFFF00;
-	text-align: center;
-	left: 0;
-	margin: 0;
+	left: 500px;
+	margin: 8px;
 	width: 100%;
 	height: 20px;
 }
@@ -88,7 +87,7 @@ input[type="text"] {
 * 業務body定義
 */
 #gymBody {
-	height: 560px;
+	height: 578px;
 	overflow: hidden;
 }
 
@@ -163,7 +162,6 @@ input[type="text"] {
 * ボタンサイズ通常
 */
 .smlButton {
-	position: relative;
 	bottom: 20px;
 	width: 100px;
 	height: 30px;
