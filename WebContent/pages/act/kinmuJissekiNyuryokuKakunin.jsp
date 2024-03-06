@@ -84,34 +84,34 @@
             <div style="overflow: auto; width: 1800px; margin-left:80px;">
             <table class="tblHeader" border="1" cellpadding="0" cellspacing="0">
               <tr>
-                <td width="73px" align="center">
+                <td width="74px" align="center">
                   日付
                 </td>
-                <td width="43px" align="center">
+                <td width="44px" align="center">
                   曜
                 </td>
-                <td width="81px" align="center">
+                <td width="88px" align="center">
                   シフト
                 </td>
-                <td width="103px" align="center">
+                <td width="94px" align="center">
                   開始時刻
                 </td>
-                <td width="103px" align="center">
+                <td width="94px" align="center">
                   終了時刻
                 </td>
-                <td width="102,5px" align="center">
+                <td width="94px" align="center">
                   休憩
                 </td>
-                <td width="79.5px" align="center">
+                <td width="85px" align="center">
                   実働時間
                 </td>
-                <td width="80px" align="center">
+                <td width="84px" align="center">
                   時間外
                 </td>
-                <td width="80px" align="center">
+                <td width="82px" align="center">
                   休日
                 </td>
-                <td width="303px" align="center">
+                <td width="305px" align="center">
                   備考
                 </td>
               </tr>
@@ -144,13 +144,13 @@
                     <bean:write name="kinmuJissekiNyuryokuKakuninList" property="symbol" /><br>
                   </td>
                   <td width="100px" align="center">
-                    <html:text style="text-align:center" size="10" maxlength="5" name="kinmuJissekiNyuryokuKakuninList" property="startTime" indexed="true"></html:text><br>
+                    <html:text style="text-align:center" size="4" maxlength="5" name="kinmuJissekiNyuryokuKakuninList" property="startTime" indexed="true"></html:text><br>
                   </td>
                   <td width="100px" align="center">
-                    <html:text style="text-align:center" size="10" maxlength="5" name="kinmuJissekiNyuryokuKakuninList" property="endTime" indexed="true"></html:text><br>
+                    <html:text style="text-align:center" size="4" maxlength="5" name="kinmuJissekiNyuryokuKakuninList" property="endTime" indexed="true"></html:text><br>
                   </td>
                   <td width="100px" align="center">
-                    <html:text style="text-align:center" size="10" maxlength="5" name="kinmuJissekiNyuryokuKakuninList" property="breakTime" indexed="true"></html:text><br>
+                    <html:text style="text-align:center" size="4" maxlength="5" name="kinmuJissekiNyuryokuKakuninList" property="breakTime" indexed="true"></html:text><br>
                   </td>
                   <td width="100px" align="center">
                     <bean:write name="kinmuJissekiNyuryokuKakuninList" property="jitsudouTime" /><br>
