@@ -53,7 +53,13 @@ if (listSize > intShowLength) {
     <script type="text/javascript" src="/kikin/pages/js/message.js"></script>
     <script type="text/javascript" language="Javascript1.1">
     <!--
-
+    /**
+     * 出勤基本反映
+     */
+    function submitShukkinKihon() {
+        // サブミット
+        doSubmit('/kikin/tsukibetsuShiftNyuuryokuKihon.do');
+    }
     /**
      * 出勤希望反映
      */
@@ -542,7 +548,7 @@ if (listSize > intShowLength) {
       <div id="footer">
         <div style="margin-left:50px;">
           <input value="凡例表示" type="button" class="lngButton"  onclick="openWindow()" />
-          <input value="基本シフト反映" type="button" class="lngButton"  />
+          <input value="基本シフト反映" type="button" class="lngButton"  onclick="submitShukkinKihon()"/>
           <input value="出勤希望日反映" type="button" class="lngButton"  onclick="submitShukkinKibou()" />
         </div>
         <table>
