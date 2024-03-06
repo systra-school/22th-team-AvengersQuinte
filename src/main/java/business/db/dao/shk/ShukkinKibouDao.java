@@ -209,7 +209,7 @@ public class ShukkinKibouDao extends AbstractDao{
             strSql.append("UPDATE ");
             strSql.append("T_SHIFT ");
             strSql.append("SET ");
-            strSql.append("SHIFT_ID = ?, ");
+            strSql.append("KIBOU_SHIFT_ID = ?, ");
             strSql.append("UPDATE_SHAIN_ID = ?, ");
             strSql.append("UPDATE_DT = current_timestamp() ");
             strSql.append("WHERE ");
@@ -241,31 +241,23 @@ public class ShukkinKibouDao extends AbstractDao{
     	
     	try {
     		 StringBuffer strSql = new StringBuffer();
-             strSql.append(" UPDATE ");
+             strSql.append("INSERT ");
              strSql.append("T_SHIFT ");
-             strSql.append(" SET ");
-             strSql.append("SHAIN_ID = ?");
-             strSql.append(", YEAR_MONTH_DAY = ?");
-             strSql.append(", SHIFT_ID = ?");
-             strSql.append(", CREATE_SHAIN_ID = ?");
-             strSql.append(", CREATE_DT = current_timestamp()");
-             strSql.append(", UPDATE_SHAIN_ID = ?");
-             strSql.append(", UPDATE_DT = current_timestamp()");
-             strSql.append(" WHERE ");
-             strSql.append("     SHAIN_ID   = ? ");
-             strSql.append("and YEAR_MONTH_DAY = ? ");
+             strSql.append("( KIBOU_SHIFT_ID ");
+             strSql.append(", CREATE_SHAIN_ID");
+             strSql.append(", CREATE_DT )");
+             strSql.append("VALUES(");
+             strSql.append("?");
+             strSql.append("?");
+             strSql.append("?");
+             strSql.append(")");
              
 
              PreparedStatement ps = connection.prepareStatement(strSql.toString());
 
-             ps.setString(1, shukkinKibouNyuuryokuDto.getShainId());
-             ps.setString(2, shukkinKibouNyuuryokuDto.getYearMonthDay());
-             ps.setString(3, shukkinKibouNyuuryokuDto.getKibouShiftId());
-             ps.setString(4, loginUserDto.getShainId());
-             ps.setString(5, loginUserDto.getShainId());
-             ps.setString(6, shukkinKibouNyuuryokuDto.getShainId());
-             ps.setString(7, shukkinKibouNyuuryokuDto.getYearMonthDay());
-
+             ps.setString(1, shukkinKibouNyuuryokuDto.getKibouShiftId());
+             ps.setString(2, loginUserDto.getShainId());
+             ps.setString(3, shukkinKibouNyuuryokuDto.getYearMonthDay());
              
 
              // ログ出力

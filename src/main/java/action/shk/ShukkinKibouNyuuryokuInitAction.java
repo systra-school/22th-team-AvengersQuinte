@@ -45,10 +45,10 @@ public class ShukkinKibouNyuuryokuInitAction extends ShukkinKibouAbstractAction 
 		// ログインユーザ情報をセッションより取得
 		LoginUserDto loginUserDto = (LoginUserDto) session
 				.getAttribute(RequestSessionNameConstant.SESSION_CMN_LOGIN_USER_INFO);
-		
-        String shainId = loginUserDto.getShainId();
-        req.setAttribute("shainId", shainId);
-		
+
+		String shainId = loginUserDto.getShainId();
+		req.setAttribute("shainId", shainId);
+
 		// フォーム
 		ShukkinKibouNyuuryokuForm shukkinKibouNyuuryokuForm = (ShukkinKibouNyuuryokuForm) form;
 
@@ -96,20 +96,23 @@ public class ShukkinKibouNyuuryokuInitAction extends ShukkinKibouAbstractAction 
 			shukkinKibouNyuuryokuForm.setShukkinKibouNyuuryokuBeanList(shukkinKibouNyuuryokuBeanList);
 			shukkinKibouNyuuryokuForm.setDateBeanList(dateBeanList);
 			shukkinKibouNyuuryokuForm.setYearMonth(yearMonth);
-			
+
 		}
 		return mapping.findForward(forward);
 
 	}
 
-	private List<ShukkinKibouNyuuryokuBean> dtoToBean(List<List<ShukkinKibouKakuninDto>> kakuninDtoListList, LoginUserDto loginUserDto
-			)
+	private List<ShukkinKibouNyuuryokuBean> dtoToBean(List<List<ShukkinKibouKakuninDto>> kakuninDtoListList,
+			LoginUserDto loginUserDto)
 			throws IllegalArgumentException, IllegalAccessException, InvocationTargetException {
+
+		// valueでエラーになるからコメントアウト
+		// List<List<ShukkinKibouKakuninDto>> collection = kakuninDtoListList.values();
 		List<ShukkinKibouNyuuryokuBean> shukkinKibouKakuninBeanList = new ArrayList<ShukkinKibouNyuuryokuBean>();
 
-		//社員IDを変数に入れる
+		// 社員IDを変数に入れる
 		String loginUserShainId = loginUserDto.getShainId();
-		
+
 // 社員分のループ
 		for (List<ShukkinKibouKakuninDto> kakuninDtoList : kakuninDtoListList) {
 
@@ -127,63 +130,62 @@ public class ShukkinKibouNyuuryokuInitAction extends ShukkinKibouAbstractAction 
 			String shainId = "";
 			String shainName = "";
 
-			//int index = 0;
-			
-			//for (int i = 0; i < methods.length; i++) {
-			for(ShukkinKibouKakuninDto kibouKakuninDto : kakuninDtoList) {
-			
-//// "setShiftIdXX" のメソッドを動的に実行する
-//				if (methods[i].getName().startsWith("setShiftId") == (LoginUserDto.getShainId())) {
-//					if (index < kakuninDtoList.size()) {
-//// Dtoのリストのサイズ以上のとき
-//						ShukkinKibouKakuninDto kibouKakuninDto = kakuninDtoList.get(index);
-//
-//						shainId = kibouKakuninDto.getShainId();
-//						shainName = kibouKakuninDto.getShainName();
-//
-//						methods[i].invoke(shukkinKibouNyuuryokuBean, kibouKakuninDto.getKibouShiftSymbol());
-//						
-//						
-//						//登録フラグ：データがあるとき
-//						shukkinKibouNyuuryokuBean.setRegistFlg(true);
-//
-//						
-//
-//					} else {
-//// データなしの場合はハイフン
-//						methods[i].invoke(shukkinKibouNyuuryokuBean, "-");
-//						//登録フラグ：データがないとき
-//						shukkinKibouNyuuryokuBean.setRegistFlg(false);
-//					}
-					//index++;
-				
-				//ログインしているユーザーのIDとDTOの社員IDが一致する場合のみ処理を行う。
-				if(loginUserShainId.equals(kibouKakuninDto.getShainId())) {
-					shainId = kibouKakuninDto.getShainId();
-					shainName = kibouKakuninDto.getShainName();
-					shukkinKibouNyuuryokuBean.setRegistFlg(true);
-					shukkinKibouNyuuryokuBean.setShainId(shainId);
-					shukkinKibouNyuuryokuBean.setShainName(shainName);
-					
-					//ログインユーザーが見つかったらループを抜ける
-					break;
-				}
-			//ログインユーザーが見つからなかった場合の処理
-			if(shainId.isEmpty()) {
-				//データがない場合はハイフン
-				for(Method method : methods) {
-					if(method.getName().startsWith("setShiftId")) {
-						method.invoke(shukkinKibouNyuuryokuBean, "-");
-					}
-				}
-				shukkinKibouNyuuryokuBean.setRegistFlg(false);
-				
+			// とりあえず復活
+			int index = 0;
+			int listSize = kakuninDtoList.size();
+
+			for (int i = 0; i < methods.length; i++) {
+
+				// "setShiftIdXX" のメソッドを動的に実行する
+				if (methods[i].getName().startsWith("setShiftId") && listSize > index) {
+
+					ShukkinKibouKakuninDto shukkinKibouKakuninDto = kakuninDtoList.get(index);
+
+					// メソッドの実行
+					methods[i].invoke(shukkinKibouNyuuryokuBean, shukkinKibouKakuninDto.getKibouShiftId());
+
+					shainId = shukkinKibouKakuninDto.getShainId();
+					shainName = shukkinKibouKakuninDto.getShainName();
+
+					index++;
+
 				}
 			}
+
+			shukkinKibouNyuuryokuBean.setShainId(shainId);
+			shukkinKibouNyuuryokuBean.setShainName(shainName);
+			shukkinKibouNyuuryokuBean.setRegistFlg(false);
+
 			shukkinKibouKakuninBeanList.add(shukkinKibouNyuuryokuBean);
+
 		}
-
-return shukkinKibouKakuninBeanList;
+		return shukkinKibouKakuninBeanList;
+	}
 }
 
-}
+//				//オリジナルでつくったやつ
+//				//ログインしているユーザーのIDとDTOの社員IDが一致する場合のみ処理を行う。
+//				if(loginUserShainId.equals(kibouKakuninDto.getShainId())) {
+//					shainId = kibouKakuninDto.getShainId();
+//					shainName = kibouKakuninDto.getShainName();
+//					shukkinKibouNyuuryokuBean.setRegistFlg(true);
+//					shukkinKibouNyuuryokuBean.setShainId(shainId);
+//					shukkinKibouNyuuryokuBean.setShainName(shainName);
+//					
+//					//ログインユーザーが見つかったらループを抜ける
+//					break;
+//				}
+//			//ログインユーザーが見つからなかった場合の処理
+//			if(shainId.isEmpty()) {
+//				//データがない場合はハイフン
+//				for(Method method : methods) {
+//					if(method.getName().startsWith("setShiftId")) {
+//						method.invoke(shukkinKibouNyuuryokuBean, "-");
+//					}
+//				}
+//				shukkinKibouNyuuryokuBean.setRegistFlg(false);
+//				
+//				}
+//			}
+//			shukkinKibouKakuninBeanList.add(shukkinKibouNyuuryokuBean);
+//		}
