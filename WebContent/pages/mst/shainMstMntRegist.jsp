@@ -95,7 +95,7 @@
               社員マスタメンテナンス画面（新規登録）
             </td>
             <td id="headRight">
-              <input value="ログアウト" type="button" class="smlButton"  onclick="logout()" />
+             <input value="ログアウト" type="button" class="smlButton  smlButton-border-shadow smlButton-border-shadow--radius"  onclick="logout()" />
             </td>
           </tr>
         </table>

@@ -58,7 +58,7 @@
               勤務実績入力
             </td>
             <td id="headRight">
-                <input value="ログアウト" type="button" class="smlButton"  onclick="logout()" />
+               
               </td>
           </tr>
         </table>
