@@ -259,7 +259,7 @@ if (listSize > intShowLength) {
                         <% } %>
                       </tr>
                       <tr height="<%=heightSize %>px">
-                        <logic:iterate id="dateBeanList" name="shukkinKibouKakuninForm" property="dateBeanList">
+                        <logic:iterate id="dateBeanList" name="tsukibetsuShiftNyuuryokuForm" property="dateBeanList">
                           <bean:define id="youbiEnum" name="dateBeanList" property="youbiEnum"/>
                           <bean:define id="shukujitsuFlg" name="dateBeanList" property="shukujitsuFlg"/>
                               <%
