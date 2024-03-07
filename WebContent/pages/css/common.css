@@ -21,10 +21,9 @@ select {
 /*
 * ↓　2024/03/05 追加　矢葺
 */
-input[type="password"],
-input[type="text"] {
-    border-color: #000000 #dcdcdc #dcdcdc #000000;
-    border-width: medium;
+input[type="password"], input[type="text"] {
+	border-color: #000000 #dcdcdc #dcdcdc #000000;
+	border-width: medium;
 }
 
 #wrapper {
@@ -54,7 +53,6 @@ input[type="text"] {
 #headLeft {
 	width: 200px;
 	text-align: left;
-	
 }
 
 #headCenter {
@@ -71,7 +69,6 @@ input[type="text"] {
 	width: 900px;
 	text-align: right;
 	height: 80px;
-	
 }
 /*
 * メニュー画面のボタン
@@ -162,11 +159,63 @@ input[type="text"] {
 * ボタンサイズ通常
 */
 .smlButton {
-	bottom: 20px;
-	width: 100px;
-	height: 30px;
-	border-color: #ffffff #000000 #000000 #ffffff;
 	background-color: #c0c0c0;
+	font-size: 1.6rem;
+	font-weight: 700;
+	line-height: 1.5;
+	position: relative;
+	display: inline-block;
+	padding: 1rem 4rem;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+	text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
+	letter-spacing: 0.1em;
+	color: #212529;
+	border-radius: 0.5rem;
+}
+
+.smlButton-border-shadow {
+	padding: calc(1.5rem - 12px) 3rem 1.5rem;
+	background: #fff;
+}
+
+.smlButton-border-shadow:before {
+	position: absolute;
+	top: -6px;
+	left: -6px;
+	width: 100%;
+	height: 100%;
+	content: "";
+	-webkit-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+	border: 3px solid #000;
+	border-radius: 0.5rem;
+}
+
+.smlButton-border-shadow:hover {
+	padding: calc(1.5rem - 6px) 3rem;
+}
+
+.smlButton-border-shadow:hover:before {
+	top: 0;
+	left: 0;
+}
+
+.smlButton-border-shadow--radius:before {
+	border-radius: 100vh;
+}
+
+html {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	font-size: 62.5%;
 }
 
 /*
@@ -178,8 +227,18 @@ input[type="text"] {
 	border-color: #ffffff #000000 #000000 #ffffff;
 	background-color: #c0c0c0;
 }
-.bigButton:hover{
-	background-color: #ffff80;
+
+.bigButton--yellow {
+	color: #000;
+	background-color: #fff100;
+	border-bottom: 5px solid #ccc100;
+}
+
+.bigButton--yellow:hover {
+	margin-top: 3px;
+	color: #000;
+	background: #fff20a;
+	border-bottom: 2px solid #ccc100;
 }
 /*
 * ボタンサイズロング
