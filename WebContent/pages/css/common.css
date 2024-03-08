@@ -35,7 +35,7 @@ input[type="password"], input[type="text"] {
 */
 #header, #gymBody, #footer {
 	width: 100%;
-	margin: 0px;
+	margin: -10px;
 	padding: 25px;
 	background-color: #66CCFF;
 }
@@ -112,6 +112,34 @@ input[type="password"], input[type="text"] {
 	height: 578px;
 	overflow: hidden;
 }
+.chii{
+	display: flex;
+	width: auto;
+	align-items: center;
+	gap: 40px;
+	animation: loop 60s linear infinite;
+	background-color: #ffff80;
+}
+.chii_container {
+	margin-top: 120px;
+}
+
+.chii2 a {
+	display: block;
+}
+.chii2 img {
+	width: auto;
+	max-width: none;
+	height: 70px;
+}
+@keyframes loop {
+	to { transform: translateX(-50%); }
+}
+@media screen and (min-width: 768px) {
+	.sponsor_item a {
+		padding: 24px 0;
+	}
+}
 
 /*
 * フッター定義
@@ -155,40 +183,42 @@ input[type="password"], input[type="text"] {
 }
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat:900');
+
 h3 {
-  margin: 0;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 13vh;
-  letter-spacing: 1vw;
-  position: absolute;
-  top: 46vh;
-  text-align: center;
-  left: 53%;
-  transform: translateX(-50%);
-  color: white;
-   background:url('https://chiikawa-biyori.com/wp-content/uploads/2021/11/chiikawa20210108_2.jpg');
- 
-   background-size: auto 200%;
-  background-clip: text;
-  text-fill-color: transparent;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: shine 8s linear infinite;
+	margin: 0;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 13vh;
+	letter-spacing: 1vw;
+	position: absolute;
+	top: 46vh;
+	text-align: center;
+	left: 53%;
+	transform: translateX(-50%);
+	color: white;
+	background:
+		url('https://chiikawa-biyori.com/wp-content/uploads/2021/11/chiikawa20210108_2.jpg');
+	background-size: auto 200%;
+	background-clip: text;
+	text-fill-color: transparent;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: shine 8s linear infinite;
 }
 
-   ＆:nth-child(2) {
-    top: 50vh;
-     
+＆:nth-child(2) {
+	top: 50vh;
 }
-  @keyframes shine {
-    from {
-      background-position: center 0;
-    }
-    to {
-      background-position: center 200%;
-    }
-  }
 
+@keyframes shine {
+	from { 
+	background-position:center0;
+}
+
+to {
+	background-position: center 200%;
+}
+
+}
 
 /*
 * エラーページ ヘッダー定義
@@ -394,14 +424,17 @@ html {
 	top: 55%;
 	transform: translate(-50%, -50%);
 }
-
-@keyframes slide { 
-	0% {
+/*
+	メニューちぃ
+*/
+@keyframes slide { 0% {
 	transform: translateX(-25%);
 }
 
-100%{
-	transform:translateX(25%);
+100%
+{
+transform:translateX(
+25%);
 }
 }
 @media only screen {

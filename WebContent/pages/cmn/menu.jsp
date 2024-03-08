@@ -26,7 +26,8 @@
         <table>
           <tr>
             <td id="headLeft">
-              Å@
+
+
             </td>
             <td id="headCenter">
             <logic:equal name="<%=RequestSessionNameConstant.SESSION_CMN_LOGIN_USER_INFO %>"
@@ -48,6 +49,7 @@
         </table>
       </div>
       <div id="gymBody">
+      
         <logic:equal name="<%=RequestSessionNameConstant.SESSION_CMN_LOGIN_USER_INFO %>"
                      property="kengenId"
                      value="<%=CommonConstant.Kengen.KANRISYA.getId() %>">
@@ -125,6 +127,233 @@
 
         </logic:equal>
       </div>
+      <ul class="chii" >
+      <li class="chii2">
+      <a href="https://chiikawa-biyori.com/wallpaper" target="_blank">
+      <img src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg" alt="CHII"width="296"height="140"decoding="async"class="ls-is-cached lazyloaded is-loaded">
+      </a>
+      <noscript>
+      "<img src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg" alt="CHII"width="296"height="140"data-eio="1">"
+      </noscript>
+      </li>
+      
+      <li class="chii2">
+      <a href="https://chiikawa-biyori.com/wallpaper" target="_blank">
+      <img src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg" alt="CHII"width="296"height="140"decoding="async"class="ls-is-cached lazyloaded is-loaded">
+      </a>
+      <noscript>
+      "<img src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg" alt="CHII"width="296"height="140"data-eio="1">"
+      </noscript>
+      </li>
+      
+      <li class="chii2">
+      <a href="https://chiikawa-biyori.com/wallpaper" target="_blank">
+      <img src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg" alt="CHII"width="296"height="140"decoding="async"class="ls-is-cached lazyloaded is-loaded">
+      </a>
+      <noscript>
+      "<img src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg" alt="CHII"width="296"height="140"data-eio="1">"
+      </noscript>
+      </li>
+      
+      <li class="chii2">
+      <a href="https://chiikawa-biyori.com/wallpaper" target="_blank">
+      <img src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg" alt="CHII"width="296"height="140"decoding="async"class="ls-is-cached lazyloaded is-loaded">
+      </a>
+      <noscript>
+      "<img src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg" alt="CHII"width="296"height="140"data-eio="1">"
+      </noscript>
+      </li>
+      
+      <li class="chii2">
+      <a href="https://chiikawa-biyori.com/wallpaper" target="_blank">
+      <img src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg" alt="CHII"width="296"height="140"decoding="async"class="ls-is-cached lazyloaded is-loaded">
+      </a>
+      
+      <noscript>
+      "<img src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg" alt="CHII"width="296"height="140"data-eio="1">"
+      </noscript>
+      </li>
+      
+      <li class="chii2">
+      <a href="https://chiikawa-biyori.com/wallpaper" target="_blank">
+      <img src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg" alt="CHII"width="296"height="140"decoding="async"class="ls-is-cached lazyloaded is-loaded">
+      </a>
+      <noscript>
+      "<img src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg" alt="CHII"width="296"height="140"data-eio="1">"
+      </noscript>
+      </li>
+      
+      <li class="chii2">
+      <a href="https://chiikawa-biyori.com/wallpaper" target="_blank">
+      <img src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg" alt="CHII"width="296"height="140"decoding="async"class="ls-is-cached lazyloaded is-loaded">
+      </a>
+      <noscript>
+      "<img src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg" alt="CHII"width="296"height="140"data-eio="1">"
+      </noscript>
+      </li>
+      
+      <li class="chii2">
+      <a href="https://chiikawa-biyori.com/wallpaper" target="_blank">
+      <img src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg" alt="CHII"width="296"height="140"decoding="async"class="ls-is-cached lazyloaded is-loaded">
+      </a>
+      <noscript>
+      "<img src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg" alt="CHII"width="296"height="140"data-eio="1">"
+      </noscript>
+      </li>
+      
+      <li class="chii2">
+      <a href="https://chiikawa-biyori.com/wallpaper" target="_blank">
+      <img src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg" alt="CHII"width="296"height="140"decoding="async"class="ls-is-cached lazyloaded is-loaded">
+      </a>
+      <noscript>
+      "<img src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg" alt="CHII"width="296"height="140"data-eio="1">"
+      </noscript>
+      </li>
+      
+      <li class="chii2">
+      <a href="https://chiikawa-biyori.com/wallpaper" target="_blank">
+      <img src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg" alt="CHII"width="296"height="140"decoding="async"class="ls-is-cached lazyloaded is-loaded">
+      </a>
+      <noscript>
+      "<img src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg" alt="CHII"width="296"height="140"data-eio="1">"
+      </noscript>
+      </li>
+      
+      <li class="chii2">
+      <a href="https://chiikawa-biyori.com/wallpaper" target="_blank">
+      <img src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg" alt="CHII"width="296"height="140"decoding="async"class="ls-is-cached lazyloaded is-loaded">
+      </a>
+      <noscript>
+      "<img src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg" alt="CHII"width="296"height="140"data-eio="1">"
+      </noscript>
+      </li>
+      
+      <li class="chii2">
+      <a href="https://chiikawa-biyori.com/wallpaper" target="_blank">
+      <img src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg" alt="CHII"width="296"height="140"decoding="async"class="ls-is-cached lazyloaded is-loaded">
+      </a>
+      <noscript>
+      "<img src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg" alt="CHII"width="296"height="140"data-eio="1">"
+      </noscript>
+      </li>
+      
+      <li class="chii2">
+      <a href="https://chiikawa-biyori.com/wallpaper" target="_blank">
+      <img src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg" alt="CHII"width="296"height="140"decoding="async"class="ls-is-cached lazyloaded is-loaded">
+      </a>
+      <noscript>
+      "<img src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg" alt="CHII"width="296"height="140"data-eio="1">"
+      </noscript>
+      </li>
+      
+      <li class="chii2">
+      <a href="https://chiikawa-biyori.com/wallpaper" target="_blank">
+      <img src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg" alt="CHII"width="296"height="140"decoding="async"class="ls-is-cached lazyloaded is-loaded">
+      </a>
+      <noscript>
+      "<img src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg" alt="CHII"width="296"height="140"data-eio="1">"
+      </noscript>
+      </li>
+      
+      <li class="chii2">
+      <a href="https://chiikawa-biyori.com/wallpaper" target="_blank">
+      <img src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg" alt="CHII"width="296"height="140"decoding="async"class="ls-is-cached lazyloaded is-loaded">
+      </a>
+      <noscript>
+      "<img src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg" alt="CHII"width="296"height="140"data-eio="1">"
+      </noscript>
+      </li>
+      
+      <li class="chii2">
+      <a href="https://chiikawa-biyori.com/wallpaper" target="_blank">
+      <img src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg" alt="CHII"width="296"height="140"decoding="async"class="ls-is-cached lazyloaded is-loaded">
+      </a>
+      <noscript>
+      "<img src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg" alt="CHII"width="296"height="140"data-eio="1">"
+      </noscript>
+      </li>
+      
+      <li class="chii2">
+      <a href="https://chiikawa-biyori.com/wallpaper" target="_blank">
+      <img src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg" alt="CHII"width="296"height="140"decoding="async"class="ls-is-cached lazyloaded is-loaded">
+      </a>
+      <noscript>
+      "<img src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg" alt="CHII"width="296"height="140"data-eio="1">"
+      </noscript>
+      </li>
+      
+      <li class="chii2">
+      <a href="https://chiikawa-biyori.com/wallpaper" target="_blank">
+      <img src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg" alt="CHII"width="296"height="140"decoding="async"class="ls-is-cached lazyloaded is-loaded">
+      </a>
+      <noscript>
+      "<img src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg" alt="CHII"width="296"height="140"data-eio="1">"
+      </noscript>
+      </li>
+      
+      <li class="chii2">
+      <a href="https://chiikawa-biyori.com/wallpaper" target="_blank">
+      <img src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg" alt="CHII"width="296"height="140"decoding="async"class="ls-is-cached lazyloaded is-loaded">
+      </a>
+      <noscript>
+      "<img src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg" alt="CHII"width="296"height="140"data-eio="1">"
+      </noscript>
+      </li>
+      
+      <li class="chii2">
+      <a href="https://chiikawa-biyori.com/wallpaper" target="_blank">
+      <img src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg" alt="CHII"width="296"height="140"decoding="async"class="ls-is-cached lazyloaded is-loaded">
+      </a>
+      <noscript>
+      "<img src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg" alt="CHII"width="296"height="140"data-eio="1">"
+      </noscript>
+      </li>
+      
+      <li class="chii2">
+      <a href="https://chiikawa-biyori.com/wallpaper" target="_blank">
+      <img src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg" alt="CHII"width="296"height="140"decoding="async"class="ls-is-cached lazyloaded is-loaded">
+      </a>
+      <noscript>
+      "<img src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg" alt="CHII"width="296"height="140"data-eio="1">"
+      </noscript>
+      </li>
+      
+      <li class="chii2">
+      <a href="https://chiikawa-biyori.com/wallpaper" target="_blank">
+      <img src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg" alt="CHII"width="296"height="140"decoding="async"class="ls-is-cached lazyloaded is-loaded">
+      </a>
+      <noscript>
+      "<img src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg" alt="CHII"width="296"height="140"data-eio="1">"
+      </noscript>
+      </li>
+      
+      <li class="chii2">
+      <a href="https://chiikawa-biyori.com/wallpaper" target="_blank">
+      <img src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg" alt="CHII"width="296"height="140"decoding="async"class="ls-is-cached lazyloaded is-loaded">
+      </a>
+      <noscript>
+      "<img src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg" alt="CHII"width="296"height="140"data-eio="1">"
+      </noscript>
+      </li>
+      
+      <li class="chii2">
+      <a href="https://chiikawa-biyori.com/wallpaper" target="_blank">
+      <img src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg" alt="CHII"width="296"height="140"decoding="async"class="ls-is-cached lazyloaded is-loaded">
+      </a>
+      <noscript>
+      "<img src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg" alt="CHII"width="296"height="140"data-eio="1">"
+      </noscript>
+      </li>
+      
+      <li class="chii2">
+      <a href="https://chiikawa-biyori.com/wallpaper" target="_blank">
+      <img src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg" alt="CHII"width="296"height="140"decoding="async"class="ls-is-cached lazyloaded is-loaded">
+      </a>
+      <noscript>
+      "<img src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg" alt="CHII"width="296"height="140"data-eio="1">"
+      </noscript>
+      </li>
+      </ul>
       <div id="footer">
         <table>
           <tr>

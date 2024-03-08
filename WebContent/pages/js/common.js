@@ -1,13 +1,13 @@
 /**
- * ƒtƒ@ƒCƒ‹–¼Fcheck.js
- * ‹¤’Êˆ—
+ * ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½Fcheck.js
+ * ï¿½ï¿½ï¿½Êï¿½ï¿½ï¿½
  *
- * •ÏX—š—ğ
+ * ï¿½ÏXï¿½ï¿½ï¿½ï¿½
  * 1.0  2010/09/10 Kazuya.Naraki
  */
 
 /**
- *  ƒƒOƒAƒEƒgƒ{ƒ^ƒ“ƒTƒuƒ~ƒbƒg
+ *  ï¿½ï¿½ï¿½Oï¿½Aï¿½Eï¿½gï¿½{ï¿½^ï¿½ï¿½ï¿½Tï¿½uï¿½~ï¿½bï¿½g
  */
 function logout() {
     document.forms[0].action = "/kikin/logout.do";
@@ -15,7 +15,7 @@ function logout() {
 }
 
 /**
- *  –ß‚éƒ{ƒ^ƒ“ƒTƒuƒ~ƒbƒg
+ *  ï¿½ß‚ï¿½{ï¿½^ï¿½ï¿½ï¿½Tï¿½uï¿½~ï¿½bï¿½g
  */
 function doSubmit(action) {
     document.forms[0].action = action;
