@@ -113,20 +113,20 @@ public class ShukkinKibouNyuuryokuSearchAction extends ShukkinKibouAbstractActio
 		// 社員IDを変数に入れる
 		String loginUserShainId = loginUserDto.getShainId();
 
-// 社員分のループ
+		// 社員分のループ
 		for (List<ShukkinKibouKakuninDto> kakuninDtoList : kakuninDtoListList) {
 
-// 実行するオブジェクトの生成
+			// 実行するオブジェクトの生成
 			ShukkinKibouNyuuryokuBean shukkinKibouNyuuryokuBean = new ShukkinKibouNyuuryokuBean();
 
-// メソッドの取得
+			// メソッドの取得
 			Method[] methods = shukkinKibouNyuuryokuBean.getClass().getMethods();
 
-// ソートを行う
+			// ソートを行う
 			Comparator<Method> asc = new MethodComparator();
 			Arrays.sort(methods, asc); // 配列をソート
 
-// 社員名
+			// 社員名
 			String shainId = "";
 			String shainName = "";
 

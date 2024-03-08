@@ -10,7 +10,6 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
@@ -24,17 +23,17 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
 import business.dto.LoginUserDto;
-import business.dto.mth.TsukibetsuShiftDto;
+import business.dto.shk.ShukkinKibouKakuninDto;
 import business.logic.comparator.MethodComparator;
-import business.logic.mth.TsukibetsuShiftLogic;
+import business.logic.shk.ShukkinKibouLogic;
 import business.logic.utils.CheckUtils;
 import business.logic.utils.ComboListUtilLogic;
 import business.logic.utils.CommonUtils;
 import constant.CommonConstant;
 import constant.RequestSessionNameConstant;
 import form.common.DateBean;
-import form.mth.TsukibetsuShiftNyuuryokuBean;
-import form.mth.TsukibetsuShiftNyuuryokuForm;
+import form.shk.ShukkinKibouNyuuryokuBean;
+import form.shk.ShukkinKibouNyuuryokuForm;
 
 /**
  * 説明：月別シフト入力初期表示アクションクラス
@@ -55,68 +54,94 @@ public class TsukibetsuShiftNyuuryokuInitAction extends TsukibetsuShiftNyuuryoku
     public ActionForward execute(ActionMapping mapping, ActionForm form,
             HttpServletRequest req, HttpServletResponse res) throws Exception {
 
-        log.info(new Throwable().getStackTrace()[0].getMethodName());
+    	log.info(new Throwable().getStackTrace()[0].getMethodName());
 
-        // フォワードキー
-        String forward = CommonConstant.SUCCESS;
+		// フォワードキー
+		String forward = CommonConstant.SUCCESS;
 
-        // セッション
-        HttpSession session = req.getSession();
+		// セッション
+		HttpSession session = req.getSession();
 
-        // ログインユーザ情報をセッションより取得
-        LoginUserDto loginUserDto = (LoginUserDto) session.getAttribute(RequestSessionNameConstant.SESSION_CMN_LOGIN_USER_INFO);
+		// ログインユーザ情報をセッションより取得
+		LoginUserDto loginUserDto = (LoginUserDto) session
+				.getAttribute(RequestSessionNameConstant.SESSION_CMN_LOGIN_USER_INFO);
+		// 社員IDを取得する。
+		String shainId = loginUserDto.getShainId();
+		req.setAttribute("shainId", shainId);
 
-        // フォーム
-        TsukibetsuShiftNyuuryokuForm tsukibetsuShiftForm = (TsukibetsuShiftNyuuryokuForm) form;
+		// フォーム
+		ShukkinKibouNyuuryokuForm shukkinKibouNyuuryokuForm = (ShukkinKibouNyuuryokuForm) form;
 
-        // 対象年月
-        String yearMonth = CommonUtils.getFisicalDay(CommonConstant.yearMonthNoSl);
+		// 画面のリスト情報
+		List<ShukkinKibouNyuuryokuBean> shukkinKibouNyuuryokuBeanList = shukkinKibouNyuuryokuForm
+				.getShukkinKibouNyuuryokuBeanList();
 
-        // ロジック生成
-        TsukibetsuShiftLogic tsukibetsuShiftLogic = new TsukibetsuShiftLogic();
+		// 対象年月
+		 String yearMonth = CommonUtils.getFisicalDay(CommonConstant.yearMonthNoSl);
+		//String yearMonth = shukkinKibouNyuuryokuForm.getYearMonth();
+		
+		 // ロジック生成
+		ShukkinKibouLogic shukkinKibouLogic = new ShukkinKibouLogic();
 
-        // 対象年月の月情報を取得する。
-        List<DateBean> dateBeanList = CommonUtils.getDateBeanList(yearMonth);
+		// 対象年月の月情報を取得する。
+		List<DateBean> dateBeanList = CommonUtils.getDateBeanList(yearMonth);
 
-        // シフトIDを取得する
-        Map<String,List<TsukibetsuShiftDto>> tsukibetsuShiftDtoMap = tsukibetsuShiftLogic.getTsukibetsuShiftDtoMap(yearMonth, true);
+		//白石くんのに合わせるためにコメントアウトしておく
+//		// 出勤希望日を取得する
+//		List<List<ShukkinKibouKakuninDto>> kakuninDtoListList = shukkinKibouLogic
+//				.getShukkinKibouKakuninDtoList(yearMonth);
+		// 他のクラスでは宣言されているが、このクラスだと名前が被っているので一旦コメントアウト
+		// List<ShukkinKibouNyuuryokuBean> shukkinKibouNyuuryokuBeanList = new
+		// ArrayList<ShukkinKibouNyuuryokuBean>();
 
-        List<TsukibetsuShiftNyuuryokuBean> tsukibetsuShiftBeanList = new ArrayList<TsukibetsuShiftNyuuryokuBean>();
+		// フォームデータをDtoに変換する
+		//List<List<ShukkinKibouNyuuryokuDto>> nyuuryokuDtoListList = this.formToDto(shukkinKibouNyuuryokuBeanList,
+		//		dateBeanList);
 
-        // セレクトボックスの取得
-        ComboListUtilLogic comboListUtils = new ComboListUtilLogic();
-        Map<String, String> shiftCmbMap = comboListUtils.getComboShift(true);
-        Map<String, String> yearMonthCmbMap = comboListUtils.getComboYearMonth(
-        		CommonUtils.getFisicalDay(CommonConstant.yearMonthNoSl), 3, ComboListUtilLogic.KBN_YEARMONTH_NEXT, 
-        		false);
+		// 登録・更新処理
+		//shukkinKibouLogic.registKibouShift(nyuuryokuDtoListList, loginUserDto);
 
-        if (CheckUtils.isEmpty(tsukibetsuShiftDtoMap)) {
-            // データなし
-            TsukibetsuShiftNyuuryokuBean tsukibetsuShiftBean = new TsukibetsuShiftNyuuryokuBean();
-            tsukibetsuShiftBean.setShainId(loginUserDto.getShainId());
-            tsukibetsuShiftBean.setShainName(loginUserDto.getShainName());
-            tsukibetsuShiftBean.setRegistFlg(true);
+		//シフトIDを取得する
+		List<List<ShukkinKibouKakuninDto>> kakuninDtoListList = shukkinKibouLogic.getShukkinKibouKakuninDtoList(yearMonth);
+		
+		// シフトIDを取得する
+		// 参考にしているものではMapになっているけど、オリジナルでやってみる
+		// Map<String,List<TsukibetsuShiftDto>> tsukibetsuShiftDtoMap =
+		// tsukibetsuShiftLogic.getTsukibetsuShiftDtoMap(yearMonth, true);
 
-            tsukibetsuShiftBeanList.add(tsukibetsuShiftBean);
-        } else {
-            // データあり
-            tsukibetsuShiftBeanList = dtoToBean(tsukibetsuShiftDtoMap, loginUserDto);
-        }
+		// セレクトボックスの取得
+		ComboListUtilLogic comboListUtils = new ComboListUtilLogic();
+		Map<String, String> shiftCmbMap = comboListUtils.getComboShift(true);
+		Map<String, String> yearMonthCmbMap = comboListUtils.getComboYearMonth(
+				CommonUtils.getFisicalDay(CommonConstant.yearMonthNoSl), 3, ComboListUtilLogic.KBN_YEARMONTH_NEXT,
+				false);
 
-        // フォームにデータをセットする
-        tsukibetsuShiftForm.setShiftCmbMap(shiftCmbMap);
-        tsukibetsuShiftForm.setYearMonthCmbMap(yearMonthCmbMap);
-        tsukibetsuShiftForm.setTsukibetsuShiftNyuuryokuBeanList(tsukibetsuShiftBeanList);
-        tsukibetsuShiftForm.setDateBeanList(dateBeanList);
-        tsukibetsuShiftForm.setYearMonth(yearMonth);
-        // ページング用
-        tsukibetsuShiftForm.setOffset(0);
-        tsukibetsuShiftForm.setCntPage(1);
-        tsukibetsuShiftForm.setMaxPage(CommonUtils.getMaxPage(tsukibetsuShiftDtoMap.size(), SHOW_LENGTH));
+		// ③ShukkinKibouLogic.getShukkinKibouKakuninDtoList()を呼び出す
 
-        return mapping.findForward(forward);
-    }
+		if (CheckUtils.isEmpty(kakuninDtoListList)) {
+			// データなし
+			ShukkinKibouNyuuryokuBean shukkinKibouNyuuryokuBean = new ShukkinKibouNyuuryokuBean();
+            shukkinKibouNyuuryokuBean.setShainId(loginUserDto.getShainId());
+            shukkinKibouNyuuryokuBean.setShainName(loginUserDto.getShainName());
+            shukkinKibouNyuuryokuBean.setRegistFlg(false);
 
+            shukkinKibouNyuuryokuBeanList.add(shukkinKibouNyuuryokuBean);
+            
+		} else {
+			// データあり
+			shukkinKibouNyuuryokuBeanList = dtoToBean(kakuninDtoListList, loginUserDto);
+
+			// フォームにデータをセットする
+			shukkinKibouNyuuryokuForm.setShiftCmbMap(shiftCmbMap);
+			shukkinKibouNyuuryokuForm.setYearMonthCmbMap(yearMonthCmbMap);
+			shukkinKibouNyuuryokuForm.setShukkinKibouNyuuryokuBeanList(shukkinKibouNyuuryokuBeanList);
+			shukkinKibouNyuuryokuForm.setDateBeanList(dateBeanList);
+			shukkinKibouNyuuryokuForm.setYearMonth(yearMonth);
+			
+		}
+		return mapping.findForward(forward);
+
+	}
     /**
      * DtoからBeanへ変換する
      * @param tsukibetsuShiftDtoMap
@@ -127,55 +152,60 @@ public class TsukibetsuShiftNyuuryokuInitAction extends TsukibetsuShiftNyuuryoku
      * @throws IllegalAccessException
      * @throws IllegalArgumentException
      */
-    private List<TsukibetsuShiftNyuuryokuBean> dtoToBean(Map<String, List<TsukibetsuShiftDto>> tsukibetsuShiftDtoMap
-                                                      , LoginUserDto loginUserDto)
-                                                                        throws IllegalArgumentException,
-                                                                        IllegalAccessException,
-                                                                        InvocationTargetException {
-        Collection<List<TsukibetsuShiftDto>> collection = tsukibetsuShiftDtoMap.values();
+    private List<ShukkinKibouNyuuryokuBean> dtoToBean(List<List<ShukkinKibouKakuninDto>> kakuninDtoListList,
+			LoginUserDto loginUserDto)
+			throws IllegalArgumentException, IllegalAccessException, InvocationTargetException {
 
-        List<TsukibetsuShiftNyuuryokuBean> tsukibetsuShiftBeanList = new ArrayList<TsukibetsuShiftNyuuryokuBean>();
+		List<ShukkinKibouNyuuryokuBean> shukkinKibouKakuninBeanList = new ArrayList<ShukkinKibouNyuuryokuBean>();
 
-        for (List<TsukibetsuShiftDto> tsukibetsuShiftDtoList : collection) {
+		// 社員分のループ
+		for (List<ShukkinKibouKakuninDto> kakuninDtoList : kakuninDtoListList) {
 
-            // 実行するオブジェクトの生成
-            TsukibetsuShiftNyuuryokuBean tsukibetsuShiftBean = new TsukibetsuShiftNyuuryokuBean();
+			// 実行するオブジェクトの生成
+			ShukkinKibouNyuuryokuBean shukkinKibouNyuuryokuBean = new ShukkinKibouNyuuryokuBean();
 
-            // メソッドの取得
-            Method[] methods = tsukibetsuShiftBean.getClass().getMethods();
+			// メソッドの取得
+			Method[] methods = shukkinKibouNyuuryokuBean.getClass().getMethods();
 
-            // メソッドのソートを行う
-            Comparator<Method> asc = new MethodComparator();
-            Arrays.sort(methods, asc); // 配列をソート
+			// ソートを行う
+			Comparator<Method> asc = new MethodComparator();
+			Arrays.sort(methods, asc); // 配列をソート
 
-            int index = 0;
-            int listSize = tsukibetsuShiftDtoList.size();
+			// 社員名
+			String shainId = "";
+			String shainName = "";
 
-            String shainId = "";
-            String shainName = "";
+			// とりあえず復活
+			int index = 0;
+			int listSize = kakuninDtoList.size();
 
-            for (int i = 0; i < methods.length; i++) {
-                // "setShiftIdXX" のメソッドを動的に実行する
-                if (methods[i].getName().startsWith("setShiftId") && listSize > index) {
-                    TsukibetsuShiftDto tsukibetsuShiftDto = tsukibetsuShiftDtoList.get(index);
-                    // メソッド実行
-                    methods[i].invoke(tsukibetsuShiftBean, tsukibetsuShiftDto.getShiftId());
+			for (int i = 0; i < methods.length; i++) {
 
-                    shainId = tsukibetsuShiftDto.getShainId();
-                    shainName = tsukibetsuShiftDto.getShainName();
+				// "setShiftIdXX" のメソッドを動的に実行する
+				if (methods[i].getName().startsWith("setShiftId") && listSize > index) {
 
-                    index ++;
-                }
-            }
+					ShukkinKibouKakuninDto shukkinKibouKakuninDto = kakuninDtoList.get(index);
 
-            tsukibetsuShiftBean.setShainId(shainId);
-            tsukibetsuShiftBean.setShainName(shainName);
-            tsukibetsuShiftBean.setRegistFlg(false);
+					// メソッドの実行
+					methods[i].invoke(shukkinKibouNyuuryokuBean, shukkinKibouKakuninDto.getKibouShiftId());
 
-            tsukibetsuShiftBeanList.add(tsukibetsuShiftBean);
+					shainId = shukkinKibouKakuninDto.getShainId();
+					shainName = shukkinKibouKakuninDto.getShainName();
 
-        }
+					index++;
 
-        return tsukibetsuShiftBeanList;
-    }
+				}
+			}
+
+			shukkinKibouNyuuryokuBean.setShainId(shainId);
+			shukkinKibouNyuuryokuBean.setShainName(shainName);
+			shukkinKibouNyuuryokuBean.setRegistFlg(false);
+
+			shukkinKibouKakuninBeanList.add(shukkinKibouNyuuryokuBean);
+
+		}
+		return shukkinKibouKakuninBeanList;
+	}
+
+
 }

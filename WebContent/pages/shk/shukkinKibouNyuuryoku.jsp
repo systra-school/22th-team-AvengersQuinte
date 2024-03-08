@@ -55,6 +55,10 @@
         window.open("/kikin/shiftHanrei.do?param=", null, "menubar=no, toolbar=no, scrollbars=auto, resizable=yes, width=520px, height=650px");
     }
     
+    function openKakunin(){
+        window.open("/kikin/shukkinKibouKakuninSearch.do?param=", null, "menubar=no, toolbar=no, scrollbars=auto, resizable=yes, width=520px, height=650px");
+    }
+    
     </script>
     <title>o‹ÎŠó–]“ü—Í‰æ–Ê</title>
 
@@ -542,7 +546,7 @@
             </td>
             <td id="footCenter" style="text-align: right;">
             
-            <input value="o‹ÎŠó–]“úQÆ" type="button" class="lngButton" onclick="submitSearch()" />
+            <input value="o‹ÎŠó–]“úQÆ" type="button" class="lngButton" onclick="openKakunin()" />
 
             </td>
             <td id="footRight">
