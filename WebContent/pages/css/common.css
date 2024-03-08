@@ -64,27 +64,30 @@ input[type="password"], input[type="text"] {
 	height: 20px;
 }
 
-#headCenter{
-	padding:6px 0;
-	border-bottom:8px solid #ABDEF7;
-	position:relative;
+#headCenter {
+	padding: 6px 0;
+	border-bottom: 8px solid #ABDEF7;
+	position: relative;
 }
-#headCenter:before, #headCenter:after{
-	content:"";
-	display:block;
-	height:8px;
-	position:absolute;
-	bottom:-8px;
+
+#headCenter:before, #headCenter:after {
+	content: "";
+	display: block;
+	height: 8px;
+	position: absolute;
+	bottom: -8px;
 }
-#headCenter:before{
-	width:20%;
-	left:8%;
-	background:rgba(255,255,255,0.7);
+
+#headCenter:before {
+	width: 20%;
+	left: 8%;
+	background: rgba(255, 255, 255, 0.7);
 }
-#headCenter:after{
-	width:30%;
-	left:12%;
-	background:rgba(87,176,224,0.6);
+
+#headCenter:after {
+	width: 30%;
+	left: 12%;
+	background: rgba(87, 176, 224, 0.6);
 }
 
 #headRight {
@@ -144,8 +147,48 @@ input[type="password"], input[type="text"] {
 	width: 100%;
 	margin: 0px;
 	padding: 5px;
-	background-color: #FFA4C6;
+	background: radial-gradient(ellipse at bottom, #022227 0%, #000000 100%);
+	position: relative;
+	height: 100vh;
+	width: 100vw;
+	margin: 0;
 }
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:900');
+h3 {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13vh;
+  letter-spacing: 1vw;
+  position: absolute;
+  top: 46vh;
+  text-align: center;
+  left: 53%;
+  transform: translateX(-50%);
+  color: white;
+   background:url('https://chiikawa-biyori.com/wp-content/uploads/2021/11/chiikawa20210108_2.jpg');
+ 
+   background-size: auto 200%;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 8s linear infinite;
+}
+
+   ＆:nth-child(2) {
+    top: 50vh;
+     
+}
+  @keyframes shine {
+    from {
+      background-position: center 0;
+    }
+    to {
+      background-position: center 200%;
+    }
+  }
+
 
 /*
 * エラーページ ヘッダー定義
@@ -201,7 +244,6 @@ input[type="password"], input[type="text"] {
 	letter-spacing: 0.1em;
 	color: #212529;
 	border-radius: 0.5rem;
-	top: -40px; 
 }
 
 .smlButton-border-shadow {
@@ -320,45 +362,47 @@ html {
 *動く背景
 */
 .bg {
-  animation:slide 3s ease-in-out infinite alternate;
-  background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
-  bottom:0;
-  left:-50%;
-  opacity:.5;
-  position:fixed;
-  right:-50%;
-  top:0;
-  z-index:-1;
+	animation: slide 3s ease-in-out infinite alternate;
+	background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
+	bottom: 0;
+	left: -50%;
+	opacity: .5;
+	position: fixed;
+	right: -50%;
+	top: 0;
+	z-index: -1;
 }
 
 .bg2 {
-  animation-direction:alternate-reverse;
-  animation-duration:4s;
+	animation-direction: alternate-reverse;
+	animation-duration: 4s;
 }
 
 .bg3 {
-  animation-duration:5s;
+	animation-duration: 5s;
 }
 
 .content {
-  background-color:rgba(255,255,255,.8);
-  border-radius:.25em;
-  box-shadow:0 0 .25em rgba(0,0,0,.25);
-  box-sizing:border-box;
-  left:50%;
-  padding:10vmin;
-  position:fixed;
-  text-align:center;
-  top:55%;
-  transform:translate(-50%, -50%);
+	background-color: rgba(255, 255, 255, .8);
+	border-radius: .25em;
+	box-shadow: 0 0 .25em rgba(0, 0, 0, .25);
+	box-sizing: border-box;
+	left: 50%;
+	padding: 10vmin;
+	position: fixed;
+	text-align: center;
+	top: 55%;
+	transform: translate(-50%, -50%);
 }
-@keyframes slide {
-  0% {
-    transform:translateX(-25%);
-  }
-  100% {
-    transform:translateX(25%);
-  }
+
+@keyframes slide { 
+	0% {
+	transform: translateX(-25%);
+}
+
+100%{
+	transform:translateX(25%);
+}
 }
 @media only screen {
 }

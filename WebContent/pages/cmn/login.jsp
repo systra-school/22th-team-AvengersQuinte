@@ -22,7 +22,7 @@
 			<div id="header">
 				<table>
 					<tr>
-					
+
 						<td id="headLeft"></td>
 						<td id="headCenter">ログイン</td>
 						<td id="headRight"></td>
@@ -46,8 +46,9 @@
 						<html:submit property="submit" value="送信" />
 						<html:reset value="リセット" />
 					</html:form>
-
 				</div>
+				<h3>CHIIKAWA</h3>
+			
 			</div>
 			<div id="footer">
 				<table>
