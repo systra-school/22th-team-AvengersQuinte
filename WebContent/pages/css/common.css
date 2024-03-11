@@ -25,6 +25,9 @@ input[type="password"], input[type="text"] {
 	border-width: medium;
 }
 
+html{
+	text-align: center;
+}
 #wrapper {
 	width: 100%;
 	padding: 0px;
@@ -112,7 +115,8 @@ input[type="password"], input[type="text"] {
 	height: 578px;
 	overflow: hidden;
 }
-.chii{
+
+.chii {
 	display: flex;
 	width: auto;
 	align-items: center;
@@ -120,6 +124,7 @@ input[type="password"], input[type="text"] {
 	animation: loop 60s linear infinite;
 	background-color: #ffff80;
 }
+
 .chii_container {
 	margin-top: 120px;
 }
@@ -127,13 +132,18 @@ input[type="password"], input[type="text"] {
 .chii2 a {
 	display: block;
 }
+
 .chii2 img {
 	width: auto;
 	max-width: none;
 	height: 70px;
 }
+
 @keyframes loop {
-	to { transform: translateX(-50%); }
+	to { transform:translateX(-50%);
+	
+}
+
 }
 @media screen and (min-width: 768px) {
 	.sponsor_item a {
@@ -212,6 +222,7 @@ h3 {
 @keyframes shine {
 	from { 
 	background-position:center0;
+	
 }
 
 to {
@@ -424,6 +435,16 @@ html {
 	top: 55%;
 	transform: translate(-50%, -50%);
 }
+footer{
+    width: 100%;
+    height: 100px;
+    background-color: #174a5c;
+    color: white;
+    text-align: center;
+}
+ul.footer-menu li {
+display: inline;
+}
 /*
 	メニューちぃ
 */
@@ -431,10 +452,8 @@ html {
 	transform: translateX(-25%);
 }
 
-100%
-{
-transform:translateX(
-25%);
+100%{
+transform:translateX(25%);
 }
 }
 @media only screen {
