@@ -12,13 +12,25 @@
 <title>ÉçÉOÉCÉìâÊñ Login</title>
 <link href="/kikin/pages/css/common.css" rel="stylesheet"
 	type="text/css" />
+	
 </head>
 <body>
+<%
+if(request.getAttribute("error_msg")!=null){
+	String error_msg = (String)request.getAttribute("error_msg");
+%>
+<script type="text/javascript">
+    var msg = "<%=error_msg%>";
+    alert(msg);
+<% } %>
+
+</script>
 	<div class="bg"></div>
 	<div class="bg bg2"></div>
 	<div class="bg bg3"></div>
 	<div class="content">
 		<div id="wrapper">
+		
 			<div id="header">
 				<table>
 					<tr>
@@ -48,7 +60,7 @@
 					</html:form>
 				</div>
 				<h3>CHIIKAWA</h3>
-			
+
 			</div>
 			<div id="footer">
 				<table>

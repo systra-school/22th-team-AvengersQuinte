@@ -77,7 +77,18 @@ public class LoginAction extends Action {
         LoginDto loginDto = loginLogic.getShainData(loginForm);
 
         if (CheckUtils.isEmpty(loginDto)) {
-            forward = "error";
+        	req.setAttribute("error_msg", "「氏名」は空欄にできません。");
+        	
+        	return mapping.findForward("error");
+        	//RequestDispatcher rd = req.getServletContext().getRequestDispatcher("/WEB-INF/pages/cmn/login.jsp");
+        	
+//        	try {
+//        	    req.forward(req, res);
+//        	} catch (Exception e) {
+//        	    log.error("Forwarding to login.jsp failed", e);
+//        	}
+        	
+        	//forward = "error";
         } else {
 
             // ログインユーザ保持用Dtoを作成する
