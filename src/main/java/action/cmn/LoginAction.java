@@ -77,7 +77,8 @@ public class LoginAction extends Action {
         LoginDto loginDto = loginLogic.getShainData(loginForm);
 
         if (CheckUtils.isEmpty(loginDto)) {
-        	req.setAttribute("error_msg", "「氏名」は空欄にできません。");
+        	req.setAttribute("error_msg", "ログインIDまたはパスワードが違います。"
+        			+ "");
         	
         	return mapping.findForward("error");
         	//RequestDispatcher rd = req.getServletContext().getRequestDispatcher("/WEB-INF/pages/cmn/login.jsp");
