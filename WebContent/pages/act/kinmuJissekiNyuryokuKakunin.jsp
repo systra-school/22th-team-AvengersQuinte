@@ -84,40 +84,40 @@
             <div style="overflow: auto; width: 1800px; margin-left:80px;">
             <table class="tblHeader" border="1" cellpadding="0" cellspacing="0">
               <tr>
-                <td width="74px" align="center">
+                <td width="80px" align="center">
                   日付
                 </td>
-                <td width="44px" align="center">
+                <td width="50px" align="center">
                   曜
                 </td>
-                <td width="88px" align="center">
+                <td width="100px" align="center">
                   シフト
                 </td>
-                <td width="94px" align="center">
+                <td width="100px" align="center">
                   開始時刻
                 </td>
-                <td width="94px" align="center">
+                <td width="100px" align="center">
                   終了時刻
                 </td>
-                <td width="94px" align="center">
+                <td width="100px" align="center">
                   休憩
                 </td>
-                <td width="85px" align="center">
+                <td width="100px" align="center">
                   実働時間
                 </td>
-                <td width="84px" align="center">
+                <td width="100px" align="center">
                   時間外
                 </td>
-                <td width="82px" align="center">
+                <td width="100px" align="center">
                   休日
                 </td>
-                <td width="305px" align="center">
+                <td width="322px" align="center">
                   備考
                 </td>
               </tr>
             </table>
           </div>
-            <div style="overflow: auto; height: 400px; width: 1080px; margin-left:80px; ">
+            <div style="overflow: auto; height: 400px; width: 1800px; margin-left:80px; ">
             <logic:iterate id="kinmuJissekiNyuryokuKakuninList" name="kinmuJissekiNyuryokuKakuninForm" property="kinmuJissekiNyuryokuKakuninList" indexId="idx">
               <table class="tblBody" border="1" cellpadding="0" cellspacing="0">
                 <tr>
