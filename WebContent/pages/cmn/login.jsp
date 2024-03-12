@@ -4,6 +4,8 @@
 <%@taglib uri="http://struts.apache.org/tags-bean" prefix="bean"%>
 <%@taglib uri="http://struts.apache.org/tags-html" prefix="html"%>
 <html>
+
+
 <head>
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Cache-Control" content="no-cache">
@@ -19,6 +21,7 @@
 if(request.getAttribute("error_msg")!=null){
 	String error_msg = (String)request.getAttribute("error_msg");
 %>
+
 <script type="text/javascript">
     var msg = "<%=error_msg%>";
     alert(msg);
@@ -34,7 +37,7 @@ if(request.getAttribute("error_msg")!=null){
 			<div id="header">
 				<table>
 					<tr>
-
+			
 						<td id="headLeft"></td>
 						<td id="headCenter">ÉçÉOÉCÉì</td>
 						<td id="headRight"></td>
@@ -42,6 +45,18 @@ if(request.getAttribute("error_msg")!=null){
 				</table>
 			</div>
 
+ <ul class="circles">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+ 
 
 			<div id="gymBody">
 				<div align="center">
@@ -70,6 +85,7 @@ if(request.getAttribute("error_msg")!=null){
 						<td id="footRight"></td>
 					</tr>
 				</table>
+
 			</div>
 		</div>
 	</div>

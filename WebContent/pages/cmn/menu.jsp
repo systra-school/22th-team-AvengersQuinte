@@ -22,8 +22,12 @@
 <link href="/kikin/pages/css/common.css" rel="stylesheet"
 	type="text/css" />
 </head>
+
+ 
 <body>
+
 	<div id="wrapper">
+	
 		<div id="header">
 			<table>
 				<tr>
@@ -46,11 +50,12 @@
 			</table>
 		</div>
 		<div id="gymBody">
-
 			<logic:equal
 				name="<%=RequestSessionNameConstant.SESSION_CMN_LOGIN_USER_INFO%>"
 				property="kengenId"
 				value="<%=CommonConstant.Kengen.KANRISYA.getId()%>">
+				<audio src="C:\Users\school-29\Downloads\パジャマパーティーズのうた.mp3" controls></audio>
+				
 				<div class="menuBlock">
 
 					<html:form action="/tsukibetsuShiftKakuninInit">
@@ -448,6 +453,17 @@
 						alt="CHII" width="296" height="140" data-eio="1">"
 				</noscript></li>
 		</ul>
+<ul class="circles">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
 		<div id="footer">
 			<table>
 				<tr>
