@@ -6,7 +6,6 @@
  */
 package business.db.dao.act;
 
-import static constant.DbConstant.T_Kinmu_Jisseki;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -16,11 +15,11 @@ import java.util.Map;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import constant.DbConstant.M_shift;
-
 import business.db.dao.AbstractDao;
 import business.dto.act.KinmuJissekiDto;
 import business.logic.utils.CheckUtils;
+import constant.DbConstant.M_shift;
+import constant.DbConstant.T_Kinmu_Jisseki;
 
 /**
  * 説明：勤務実績Dao
@@ -269,8 +268,8 @@ public class KinmuJissekiDao extends AbstractDao {
                 String endShift = rs.getString("END_TIME_SHIFT"); // 終了時間(シフト)
                 String breakShift = rs.getString("BREAK_TIME_SHIFT"); // 休憩時間(シフト)
 
-                String startTime = rs.getString(T_Kinmu_Jisseki.START_TIME.getName()); // 開始時間
-                String endTime = rs.getString(T_Kinmu_Jisseki.END_TIME.getName()); // 終了時間
+                String startTime = rs.getString(T_Kinmu_Jisseki.END_TIME.getName()); // 開始時間
+                String endTime = rs.getString(T_Kinmu_Jisseki.START_TIME.getName()); // 終了時間
                 String breakTime = rs.getString(T_Kinmu_Jisseki.BREAK_TIME.getName()); // 休憩時間
 
                 kinmuJissekiDto.setShainId(rs.getString(T_Kinmu_Jisseki.SHAIN_ID.getName())); // 社員ID
