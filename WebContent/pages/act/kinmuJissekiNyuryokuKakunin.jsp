@@ -58,7 +58,7 @@
               勤務実績入力
             </td>
             <td id="headRight">
-               
+            	<input value="ログアウト" type="button" class="smlButton  smlButton-border-shadow smlButton-border-shadow--radius"  onclick="logout()" />
               </td>
           </tr>
         </table>
@@ -111,13 +111,13 @@
                 <td width="100px" align="center">
                   休日
                 </td>
-                <td width="322px" align="center">
+                <td width="320px" align="center">
                   備考
                 </td>
               </tr>
             </table>
           </div>
-            <div style="overflow: auto; height: 400px; width: 1800px; margin-left:80px; ">
+            <div style="overflow: auto; height: 410px; width: 1800px; margin-left:80px; ">
             <logic:iterate id="kinmuJissekiNyuryokuKakuninList" name="kinmuJissekiNyuryokuKakuninForm" property="kinmuJissekiNyuryokuKakuninList" indexId="idx">
               <table class="tblBody" border="1" cellpadding="0" cellspacing="0">
                 <tr>
@@ -161,7 +161,7 @@
                   <td width="100px" align="center">
                     <bean:write name="kinmuJissekiNyuryokuKakuninList" property="kyuujitsuTime" /><br>
                   </td>
-                  <td width="220px" align="left">
+                  <td width="320px" align="center">
                     <html:text style="text-align:left" size="40" name="kinmuJissekiNyuryokuKakuninList" property="bikou" indexed="true"></html:text><br>
                   </td>
                 </tr>
