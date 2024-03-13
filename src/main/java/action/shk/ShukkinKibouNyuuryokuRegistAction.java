@@ -160,7 +160,7 @@ public class ShukkinKibouNyuuryokuRegistAction extends ShukkinKibouAbstractActio
 			for (int i = 0; i < methods.length; i++) {
 
 				// "setShiftIdXX" のメソッドを動的に実行する
-				if (methods[i].getName().startsWith("setKibouShiftId") && listSize > index) {
+				if (methods[i].getName().startsWith("setShiftId") && listSize > index) {
 
 					ShukkinKibouKakuninDto shukkinKibouKakuninDto = kakuninDtoList.get(index);
 
