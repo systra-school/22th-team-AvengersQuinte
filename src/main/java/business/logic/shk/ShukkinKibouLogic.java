@@ -61,15 +61,20 @@ public class ShukkinKibouLogic {
 
 		// トランザクション処理
 		connection.setAutoCommit(false);
+		//List<ShukkinKibouNyuuryokuDto> shukkinKibouNyuuryokuDtoList = new ArrayList<ShukkinKibouNyuuryokuDto>();
 
 		try {
 			// 人数分のループ
 			for (List<ShukkinKibouNyuuryokuDto> shukkinKibouNyuuryokuDtoList : nyuuryokuDtoListList) {
+				
+				
 				// 日数分ループ
 				for (ShukkinKibouNyuuryokuDto shukkinKibouNyuuryokuDto : shukkinKibouNyuuryokuDtoList) {
-
 					// 社員ID
 					String shainId = shukkinKibouNyuuryokuDto.getShainId();
+					if(shainId.equals(loginUserDto.getShainId())) {
+					// 社員ID
+					//String shainId = shukkinKibouNyuuryokuDto.getShainId();
 					// 対象年月
 					String yearMonthDay = shukkinKibouNyuuryokuDto.getYearMonthDay();
 
@@ -85,6 +90,7 @@ public class ShukkinKibouLogic {
 					}
 				}
 			}
+			}
 
 		} catch (SQLException e) {
 			// ロールバック処理
@@ -95,7 +101,7 @@ public class ShukkinKibouLogic {
 			throw e;
 
 		}
-
+		
 		// コミット
 		connection.commit();
 		// 切断
