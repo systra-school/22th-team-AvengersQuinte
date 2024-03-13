@@ -7,6 +7,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -129,6 +130,10 @@ public class ShukkinKibouNyuuryokuSearchAction extends ShukkinKibouAbstractActio
 			// 社員名
 			String shainId = "";
 			String shainName = "";
+			String d = "";
+            String d2 = "";
+            String c = "";
+            String c2 = "";
 
 			// とりあえず復活
 			int index = 0;
@@ -140,6 +145,17 @@ public class ShukkinKibouNyuuryokuSearchAction extends ShukkinKibouAbstractActio
 				if (methods[i].getName().startsWith("setShiftId") && listSize > index) {
 
 					ShukkinKibouKakuninDto shukkinKibouKakuninDto = kakuninDtoList.get(index);
+					if(Objects.nonNull(shukkinKibouKakuninDto.getKibouShiftId())) {
+                    	
+	                    
+                    	d = methods[i].getName();
+                    	d2 = d.substring(10);
+                    	c = shukkinKibouKakuninDto.getYearMonthDay();
+                    	c2 = c.substring(6);
+                    	if(!d2.equals(c2)) {
+                    		continue;
+                    	}
+                }
 
 					// メソッドの実行
 					methods[i].invoke(shukkinKibouNyuuryokuBean, shukkinKibouKakuninDto.getKibouShiftId());
