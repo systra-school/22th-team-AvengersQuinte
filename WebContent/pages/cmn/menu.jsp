@@ -472,9 +472,10 @@
 		<li></li>
 		<li></li>
 	</ul>
-	<span class="music">パジャマパーティーズのうた(再生できません)</span>
-	<audio src="C:\Users\school-29\Downloads\パジャマパーティーズのうた.mp3" controls></audio>
-
+	<div class="music">
+		パジャマパーティーズのうた
+		<audio controls autoplay src="audio/パジャマパーティーズのうた.mp3" ></audio>
+	</div>
 	</div>
 </html>
 <footer>
