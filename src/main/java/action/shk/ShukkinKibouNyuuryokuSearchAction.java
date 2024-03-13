@@ -75,7 +75,7 @@ public class ShukkinKibouNyuuryokuSearchAction extends ShukkinKibouAbstractActio
 		// セレクトボックスの取得
 		ComboListUtilLogic comboListUtils = new ComboListUtilLogic();
 		// シフト情報
-		Map<String, String> shiftCmbMap = comboListUtils.getComboShift(false);
+		Map<String, String> shiftCmbMap = comboListUtils.getComboShift(true);
 		// 年月の情報
 		Map<String, String> yearMonthCmbMap = comboListUtils.getComboYearMonth(
 				CommonUtils.getFisicalDay(CommonConstant.yearMonthNoSl), 3, ComboListUtilLogic.KBN_YEARMONTH_NEXT,
@@ -154,7 +154,7 @@ public class ShukkinKibouNyuuryokuSearchAction extends ShukkinKibouAbstractActio
 
 			shukkinKibouNyuuryokuBean.setShainId(shainId);
 			shukkinKibouNyuuryokuBean.setShainName(shainName);
-			shukkinKibouNyuuryokuBean.setRegistFlg(false);
+			shukkinKibouNyuuryokuBean.setRegistFlg(true);
 
 			shukkinKibouKakuninBeanList.add(shukkinKibouNyuuryokuBean);
 

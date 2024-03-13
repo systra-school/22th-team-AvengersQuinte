@@ -7,6 +7,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -67,7 +68,7 @@ public class ShukkinKibouNyuuryokuInitAction extends ShukkinKibouAbstractAction 
 		List<ShukkinKibouNyuuryokuBean> shukkinKibouNyuuryokuBeanList = new ArrayList<ShukkinKibouNyuuryokuBean>();
 
 //		// シフトIDを取得する
-//		Map<String, List<ShukkinKibouNyuuryokuDto>> ShukkinKibouDtoMap = ShukkinKibouLogic.getShukkinKibouDtoMap(yearMonth, true);
+//	Map<String, List<ShukkinKibouNyuuryokuDto>> ShukkinKibouDtoMap = ShukkinKibouLogic.getShukkinKibouDtoMap(yearMonth, true);
 //
 //		List<ShukkinKibouNyuuryokuBean> ShukkinKibouNyuuryokuBeanList = new ArrayList<ShukkinKibouNyuuryokuBean>();
 //
@@ -75,7 +76,7 @@ public class ShukkinKibouNyuuryokuInitAction extends ShukkinKibouAbstractAction 
 		// セレクトボックスの取得
 		ComboListUtilLogic comboListUtils = new ComboListUtilLogic();
 		// シフト情報
-		Map<String, String> shiftCmbMap = comboListUtils.getComboShift(false);
+		Map<String, String> shiftCmbMap = comboListUtils.getComboShift(true);
 		// 年月の情報
 		Map<String, String> yearMonthCmbMap = comboListUtils.getComboYearMonth(
 				CommonUtils.getFisicalDay(CommonConstant.yearMonthNoSl), 3, ComboListUtilLogic.KBN_YEARMONTH_NEXT,
@@ -84,21 +85,26 @@ public class ShukkinKibouNyuuryokuInitAction extends ShukkinKibouAbstractAction 
 		// ③ShukkinKibouLogic.getShukkinKibouKakuninDtoList()を呼び出す
 
 		if (CheckUtils.isEmpty(kakuninDtoListList)) {
-			// データなし
-			forward = CommonConstant.NODATA;
-		} else {
-			// データあり
-			shukkinKibouNyuuryokuBeanList = dtoToBean(kakuninDtoListList, loginUserDto);
+            // データなし
+            ShukkinKibouNyuuryokuBean shukkinKibouNyuuryokuBean = new ShukkinKibouNyuuryokuBean();
+            shukkinKibouNyuuryokuBean.setShainId(loginUserDto.getShainId());
+            shukkinKibouNyuuryokuBean.setShainName(loginUserDto.getShainName());
+            shukkinKibouNyuuryokuBean.setRegistFlg(true);
 
-			// フォームにデータをセットする
-			shukkinKibouNyuuryokuForm.setShiftCmbMap(shiftCmbMap);
-			shukkinKibouNyuuryokuForm.setYearMonthCmbMap(yearMonthCmbMap);
-			shukkinKibouNyuuryokuForm.setShukkinKibouNyuuryokuBeanList(shukkinKibouNyuuryokuBeanList);
-			shukkinKibouNyuuryokuForm.setDateBeanList(dateBeanList);
-			shukkinKibouNyuuryokuForm.setYearMonth(yearMonth);
+            shukkinKibouNyuuryokuBeanList.add(shukkinKibouNyuuryokuBean);
+        } else {
+            // データあり
+            shukkinKibouNyuuryokuBeanList = dtoToBean(kakuninDtoListList, loginUserDto);
+        }
 
-		}
-		return mapping.findForward(forward);
+        // フォームにデータをセットする
+        shukkinKibouNyuuryokuForm.setShiftCmbMap(shiftCmbMap);
+        shukkinKibouNyuuryokuForm.setYearMonthCmbMap(yearMonthCmbMap);
+        shukkinKibouNyuuryokuForm.setShukkinKibouNyuuryokuBeanList(shukkinKibouNyuuryokuBeanList);
+        shukkinKibouNyuuryokuForm.setDateBeanList(dateBeanList);
+        shukkinKibouNyuuryokuForm.setYearMonth(yearMonth);
+
+        return mapping.findForward(forward);
 
 	}
 
@@ -108,58 +114,71 @@ public class ShukkinKibouNyuuryokuInitAction extends ShukkinKibouAbstractAction 
 
 		// valueでエラーになるからコメントアウト
 		// List<List<ShukkinKibouKakuninDto>> collection = kakuninDtoListList.values();
-		List<ShukkinKibouNyuuryokuBean> shukkinKibouKakuninBeanList = new ArrayList<ShukkinKibouNyuuryokuBean>();
+		  List<ShukkinKibouNyuuryokuBean> shukkinKibouNyuuryokuBeanList = new ArrayList<ShukkinKibouNyuuryokuBean>();
 
-		// 社員IDを変数に入れる
-		String loginUserShainId = loginUserDto.getShainId();
+	        for (List<ShukkinKibouKakuninDto> kakuninDtoList : kakuninDtoListList) {
 
-// 社員分のループ
-		for (List<ShukkinKibouKakuninDto> kakuninDtoList : kakuninDtoListList) {
+	            // 実行するオブジェクトの生成
+	            ShukkinKibouNyuuryokuBean shukkinKibouNyuuryokuBean = new ShukkinKibouNyuuryokuBean();
 
-// 実行するオブジェクトの生成
-			ShukkinKibouNyuuryokuBean shukkinKibouNyuuryokuBean = new ShukkinKibouNyuuryokuBean();
+	            // メソッドの取得
+	            Method[] methods = shukkinKibouNyuuryokuBean.getClass().getMethods();
 
-// メソッドの取得
-			Method[] methods = shukkinKibouNyuuryokuBean.getClass().getMethods();
+	            // メソッドのソートを行う
+	            Comparator<Method> asc = new MethodComparator();
+	            Arrays.sort(methods, asc); // 配列をソート
+	           
 
-// ソートを行う
-			Comparator<Method> asc = new MethodComparator();
-			Arrays.sort(methods, asc); // 配列をソート
+	            int index = 0;
+	            int listSize = kakuninDtoList.size();
 
-// 社員名
-			String shainId = "";
-			String shainName = "";
+	            String shainId = "";
+	            String shainName = "";
+	            String d = "";
+	            String d2 = "";
+	            String c = "";
+	            String c2 = "";
 
-			// とりあえず復活
-			int index = 0;
-			int listSize = kakuninDtoList.size();
+	            for (int i = 0; i < methods.length; i++) {
+	                // "setShiftIdXX" のメソッドを動的に実行する
+	            	
+	            	
+	                if (methods[i].getName().startsWith("setShiftId") && listSize > index) {
+	                    ShukkinKibouKakuninDto shukkinKibouKakuninDto = kakuninDtoList.get(index);
+	                    // メソッド実行
+	                    if(Objects.nonNull(shukkinKibouKakuninDto.getKibouShiftId())) {
+	                    	
+	                    
+	                    	d = methods[i].getName();
+	                    	d2 = d.substring(10);
+	                    	c = shukkinKibouKakuninDto.getYearMonthDay();
+	                    	c2 = c.substring(6);
+	                    	if(!d2.equals(c2)) {
+	                    		continue;
+	                    	}
+	                }
+	                    	
+	                    
+	                    methods[i].invoke(shukkinKibouNyuuryokuBean, shukkinKibouKakuninDto.getKibouShiftId());
+	                    
+	                    shainId = shukkinKibouKakuninDto.getShainId();
+	                    shainName = shukkinKibouKakuninDto.getShainName();
 
-			for (int i = 0; i < methods.length; i++) {
+	                    index ++;
+	               
+	                }
+	            }
 
-				// "setShiftIdXX" のメソッドを動的に実行する
-				if (methods[i].getName().startsWith("setShiftId") && listSize > index) {
+	            shukkinKibouNyuuryokuBean.setShainId(shainId);
+	            shukkinKibouNyuuryokuBean.setShainName(shainName);
+	      
+	            shukkinKibouNyuuryokuBean.setRegistFlg(false);
 
-					ShukkinKibouKakuninDto shukkinKibouKakuninDto = kakuninDtoList.get(index);
+	            shukkinKibouNyuuryokuBeanList.add(shukkinKibouNyuuryokuBean);
 
-					// メソッドの実行
-					methods[i].invoke(shukkinKibouNyuuryokuBean, shukkinKibouKakuninDto.getKibouShiftId());
+	        }
 
-					shainId = shukkinKibouKakuninDto.getShainId();
-					shainName = shukkinKibouKakuninDto.getShainName();
-
-					index++;
-
-				}
-			}
-
-			shukkinKibouNyuuryokuBean.setShainId(shainId);
-			shukkinKibouNyuuryokuBean.setShainName(shainName);
-			shukkinKibouNyuuryokuBean.setRegistFlg(false);
-
-			shukkinKibouKakuninBeanList.add(shukkinKibouNyuuryokuBean);
-
-		}
-		return shukkinKibouKakuninBeanList;
+	        return shukkinKibouNyuuryokuBeanList;
 	}
 }
 

@@ -7,6 +7,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -58,16 +59,16 @@ public class ShukkinKibouNyuuryokuRegistAction extends ShukkinKibouAbstractActio
 				.getShukkinKibouNyuuryokuBeanList();
 
 		// 対象年月
-		 String yearMonth = CommonUtils.getFisicalDay(CommonConstant.yearMonthNoSl);
-		//String yearMonth = shukkinKibouNyuuryokuForm.getYearMonth();
-		
-		 // ロジック生成
+		String yearMonth = CommonUtils.getFisicalDay(CommonConstant.yearMonthNoSl);
+		// String yearMonth = shukkinKibouNyuuryokuForm.getYearMonth();
+
+		// ロジック生成
 		ShukkinKibouLogic shukkinKibouLogic = new ShukkinKibouLogic();
 
 		// 対象年月の月情報を取得する。
 		List<DateBean> dateBeanList = CommonUtils.getDateBeanList(yearMonth);
 
-		//白石くんのに合わせるためにコメントアウトしておく
+		// 白石くんのに合わせるためにコメントアウトしておく
 //		// 出勤希望日を取得する
 //		List<List<ShukkinKibouKakuninDto>> kakuninDtoListList = shukkinKibouLogic
 //				.getShukkinKibouKakuninDtoList(yearMonth);
@@ -82,9 +83,10 @@ public class ShukkinKibouNyuuryokuRegistAction extends ShukkinKibouAbstractActio
 		// 登録・更新処理
 		shukkinKibouLogic.registKibouShift(nyuuryokuDtoListList, loginUserDto);
 
-		//シフトIDを取得する
-		List<List<ShukkinKibouKakuninDto>> kakuninDtoListList = shukkinKibouLogic.getShukkinKibouKakuninDtoList(yearMonth);
-		
+		// シフトIDを取得する
+		List<List<ShukkinKibouKakuninDto>> kakuninDtoListList = shukkinKibouLogic
+				.getShukkinKibouKakuninDtoList(yearMonth);
+
 		// シフトIDを取得する
 		// 参考にしているものではMapになっているけど、オリジナルでやってみる
 		// Map<String,List<TsukibetsuShiftDto>> tsukibetsuShiftDtoMap =
@@ -102,12 +104,12 @@ public class ShukkinKibouNyuuryokuRegistAction extends ShukkinKibouAbstractActio
 		if (CheckUtils.isEmpty(kakuninDtoListList)) {
 			// データなし
 			ShukkinKibouNyuuryokuBean shukkinKibouNyuuryokuBean = new ShukkinKibouNyuuryokuBean();
-            shukkinKibouNyuuryokuBean.setShainId(loginUserDto.getShainId());
-            shukkinKibouNyuuryokuBean.setShainName(loginUserDto.getShainName());
-            shukkinKibouNyuuryokuBean.setRegistFlg(false);
+			shukkinKibouNyuuryokuBean.setShainId(loginUserDto.getShainId());
+			shukkinKibouNyuuryokuBean.setShainName(loginUserDto.getShainName());
+			shukkinKibouNyuuryokuBean.setRegistFlg(false);
 
-            shukkinKibouNyuuryokuBeanList.add(shukkinKibouNyuuryokuBean);
-            
+			shukkinKibouNyuuryokuBeanList.add(shukkinKibouNyuuryokuBean);
+
 		} else {
 			// データあり
 			shukkinKibouNyuuryokuBeanList = dtoToBean(kakuninDtoListList, loginUserDto);
@@ -118,12 +120,11 @@ public class ShukkinKibouNyuuryokuRegistAction extends ShukkinKibouAbstractActio
 			shukkinKibouNyuuryokuForm.setShukkinKibouNyuuryokuBeanList(shukkinKibouNyuuryokuBeanList);
 			shukkinKibouNyuuryokuForm.setDateBeanList(dateBeanList);
 			shukkinKibouNyuuryokuForm.setYearMonth(yearMonth);
-			
+
 		}
 		return mapping.findForward(forward);
 
 	}
-
 
 	private List<ShukkinKibouNyuuryokuBean> dtoToBean(List<List<ShukkinKibouKakuninDto>> kakuninDtoListList,
 			LoginUserDto loginUserDto)
@@ -147,6 +148,10 @@ public class ShukkinKibouNyuuryokuRegistAction extends ShukkinKibouAbstractActio
 			// 社員名
 			String shainId = "";
 			String shainName = "";
+			String d = "";
+			String d2 = "";
+			String c = "";
+			String c2 = "";
 
 			// とりあえず復活
 			int index = 0;
@@ -155,32 +160,39 @@ public class ShukkinKibouNyuuryokuRegistAction extends ShukkinKibouAbstractActio
 			for (int i = 0; i < methods.length; i++) {
 
 				// "setShiftIdXX" のメソッドを動的に実行する
-				if (methods[i].getName().startsWith("setShiftId") && listSize > index) {
+				if (methods[i].getName().startsWith("setKibouShiftId") && listSize > index) {
 
 					ShukkinKibouKakuninDto shukkinKibouKakuninDto = kakuninDtoList.get(index);
 
+					if (Objects.nonNull(shukkinKibouKakuninDto.getKibouShiftId())) {
+						d = methods[i].getName();
+						d2 = d.substring(10);
+						c = shukkinKibouKakuninDto.getYearMonthDay();
+						c2 = c.substring(6);
+						if (!d2.equals(c2)) {
+							continue;
+						}
+					}
 					// メソッドの実行
 					methods[i].invoke(shukkinKibouNyuuryokuBean, shukkinKibouKakuninDto.getKibouShiftId());
+                    
+                    shainId = shukkinKibouKakuninDto.getShainId();
+                    shainName = shukkinKibouKakuninDto.getShainName();
 
-					shainId = shukkinKibouKakuninDto.getShainId();
-					shainName = shukkinKibouKakuninDto.getShainName();
+                    index ++;
+				}
+				}
 
-					index++;
+					shukkinKibouNyuuryokuBean.setShainId(shainId);
+					shukkinKibouNyuuryokuBean.setShainName(shainName);
+					shukkinKibouNyuuryokuBean.setRegistFlg(true);
+
+					shukkinKibouKakuninBeanList.add(shukkinKibouNyuuryokuBean);
 
 				}
-			}
-
-			shukkinKibouNyuuryokuBean.setShainId(shainId);
-			shukkinKibouNyuuryokuBean.setShainName(shainName);
-			shukkinKibouNyuuryokuBean.setRegistFlg(false);
-
-			shukkinKibouKakuninBeanList.add(shukkinKibouNyuuryokuBean);
-
-		}
+			
 		return shukkinKibouKakuninBeanList;
 	}
-
-
 
 	// formToDtoメソッド、戻り値は1か月分の出勤希望Dtoリスト
 	private List<List<ShukkinKibouNyuuryokuDto>> formToDto(
@@ -193,12 +205,13 @@ public class ShukkinKibouNyuuryokuRegistAction extends ShukkinKibouAbstractActio
 		for (ShukkinKibouNyuuryokuBean shukkinKibouNyuuryokuBean : shukkinKibouNyuuryokuBeanList) {
 
 			List<ShukkinKibouNyuuryokuDto> shukkinKibouNyuuryokuDtoList = new ArrayList<ShukkinKibouNyuuryokuDto>();
+			// Dao
 
-			// 登録フラグ
-			boolean registFlg = shukkinKibouNyuuryokuBean.getRegistFlg();
-			if (!registFlg) {
-				continue;
-			}
+//			// 登録フラグ
+//			boolean registFlg = shukkinKibouNyuuryokuBean.isRegistFlg();
+//			if (!registFlg) {
+//				continue;
+//			}
 
 			// メソッドの取得
 			Method[] methods = shukkinKibouNyuuryokuBean.getClass().getMethods();
@@ -239,6 +252,5 @@ public class ShukkinKibouNyuuryokuRegistAction extends ShukkinKibouAbstractActio
 		return kibouDtoListList;
 
 	}
-
 
 }
