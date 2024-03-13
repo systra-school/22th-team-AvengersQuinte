@@ -7,7 +7,8 @@
 <%@taglib uri="http://struts.apache.org/tags-logic" prefix="logic"%>
 <%@taglib uri="http://struts.apache.org/tags-html" prefix="html"%>
 
-
+<link href="https://fonts.googleapis.com/earlyaccess/kokoro.css"
+	rel="stylesheet">
 <html>
 <head>
 <meta http-equiv="Pragma" content="no-cache">
@@ -23,11 +24,11 @@
 	type="text/css" />
 </head>
 
- 
+
 <body>
 
 	<div id="wrapper">
-	
+
 		<div id="header">
 			<table>
 				<tr>
@@ -54,58 +55,63 @@
 				name="<%=RequestSessionNameConstant.SESSION_CMN_LOGIN_USER_INFO%>"
 				property="kengenId"
 				value="<%=CommonConstant.Kengen.KANRISYA.getId()%>">
-				<audio src="C:\Users\school-29\Downloads\パジャマパーティーズのうた.mp3" controls></audio>
-				
-				<div class="menuBlock">
+				<div class="hamburger-demo-menubox">
+					<input id="hamburger-demo1" type="checkbox" class="input-hidden">
+					<label for="hamburger-demo1"
+						class="hamburger-demo-switch hamburger-demo-switch1"> <span
+						class="hamburger-switch-line1"></span>
+					</label>
+					<div class="hamburger-demo-menuwrap">
 
-					<html:form action="/tsukibetsuShiftKakuninInit">
-						<input type="submit" value="月別シフト確認"
-							class="bigButton bigButton--yellow bigButton--cubic" />
-					</html:form>
-					<html:form action="/hibetsuShiftInit">
-						<input type="submit" value="日別シフト確認"
-							class="bigButton bigButton--yellow bigButton--cubic" />
-					</html:form>
-				</div>
+						<div class="menuBlock">
 
-				<div class="menuBlock">
-					<html:form action="/kinmuJissekiKakuninInit">
-						<input type="submit" value="勤務実績確認"
-							class="bigButton bigButton--yellow bigButton--cubic" />
-					</html:form>
-					<html:form action="/kinmuJissekiNyuryokuKakuninInit">
-						<input type="submit" value="勤務実績入力"
-							class="bigButton bigButton--yellow bigButton--cubic" />
-					</html:form>
-				</div>
+							<html:form action="/tsukibetsuShiftKakuninInit">
+								<input type="submit" value="月別シフト確認"
+									class="bigButton bigButton--yellow bigButton--cubic" />
+							</html:form>
+							<html:form action="/hibetsuShiftInit">
+								<input type="submit" value="日別シフト確認"
+									class="bigButton bigButton--yellow bigButton--cubic" />
+							</html:form>
+						</div>
 
-				<div class="menuBlock">
-					<html:form action="/shukkinKibouKakuninInit">
-						<input type="submit" value="出勤希望日確認"
-							class="bigButton bigButton--yellow bigButton--cubic" />
-					</html:form>
-					<html:form action="/tsukibetsuShiftNyuuryokuInit">
-						<input type="submit" value="月別シフト入力"
-							class="bigButton bigButton--yellow bigButton--cubic" />
-					</html:form>
-				</div>
+						<div class="menuBlock">
+							<html:form action="/kinmuJissekiKakuninInit">
+								<input type="submit" value="勤務実績確認"
+									class="bigButton bigButton--yellow bigButton--cubic" />
+							</html:form>
+							<html:form action="/kinmuJissekiNyuryokuKakuninInit">
+								<input type="submit" value="勤務実績入力"
+									class="bigButton bigButton--yellow bigButton--cubic" />
+							</html:form>
+						</div>
+
+						<div class="menuBlock">
+							<html:form action="/shukkinKibouKakuninInit">
+								<input type="submit" value="出勤希望日確認"
+									class="bigButton bigButton--yellow bigButton--cubic" />
+							</html:form>
+							<html:form action="/tsukibetsuShiftNyuuryokuInit">
+								<input type="submit" value="月別シフト入力"
+									class="bigButton bigButton--yellow bigButton--cubic" />
+							</html:form>
+						</div>
 
 
-				<div class="menuBlock">
-					<html:form action="/shainMstMnt">
-						<input type="submit" value="社員マスタメンテナンス"
-							class="bigButton bigButton--yellow bigButton--cubic" />
-					</html:form>
-					<html:form action="/shiftMstMnt">
-						<input type="submit" value="シフトマスタメンテナンス"
-							class="bigButton bigButton--yellow bigButton--cubic" />
-					</html:form>
-					<html:form action="/kihonShiftInit">
-						<input type="submit" value="基本シフト登録"
-							class="bigButton bigButton--yellow bigButton--cubic" />
-					</html:form>
-				</div>
-
+						<div class="menuBlock">
+							<html:form action="/shainMstMnt">
+								<input type="submit" value="社員マスタメンテナンス"
+									class="bigButton bigButton--yellow bigButton--cubic" />
+							</html:form>
+							<html:form action="/shiftMstMnt">
+								<input type="submit" value="シフトマスタメンテナンス"
+									class="bigButton bigButton--yellow bigButton--cubic" />
+							</html:form>
+							<html:form action="/kihonShiftInit">
+								<input type="submit" value="基本シフト登録"
+									class="bigButton bigButton--yellow bigButton--cubic" />
+							</html:form>
+						</div>
 			</logic:equal>
 
 			<logic:equal
@@ -143,345 +149,341 @@
 				</div>
 
 			</logic:equal>
-
-			<div class="chii_gif">
-				<img src="https://i.makeagif.com/media/8-19-2022/qbznMF.gif"
-					alt="My awesome animated image" width="1170" height="350">
-			</div>
 		</div>
+		<div class="hamburger-demo-cover"></div>
+	</div>
+	<div class="chii_gif">
+		<img src="https://i.makeagif.com/media/8-19-2022/qbznMF.gif"
+			alt="My awesome animated image" width="1170" height="350">
+	</div>
+	</div>
 
 
-		<ul class="chii">
-			<li class="chii2"><a href="https://www.anime-chiikawa.jp/"
-				target="_blank"> <img
+	<ul class="chii">
+		<li class="chii2"><a href="https://www.anime-chiikawa.jp/"
+			target="_blank"> <img
+				src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
+				alt="CHII" width="296" height="140" decoding="async"
+				class="ls-is-cached lazyloaded is-loaded">
+		</a>
+			<noscript>
+				"<img
 					src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
-					alt="CHII" width="296" height="140" decoding="async"
-					class="ls-is-cached lazyloaded is-loaded">
-			</a>
-				<noscript>
-					"<img
-						src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
-						alt="CHII" width="296" height="140" data-eio="1">"
-				</noscript></li>
+					alt="CHII" width="296" height="140" data-eio="1">"
+			</noscript></li>
 
-			<li class="chii2"><a href="https://www.anime-chiikawa.jp/"
-				target="_blank"> <img
+		<li class="chii2"><a href="https://www.anime-chiikawa.jp/"
+			target="_blank"> <img
+				src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
+				alt="CHII" width="296" height="140" decoding="async"
+				class="ls-is-cached lazyloaded is-loaded">
+		</a>
+			<noscript>
+				"<img
 					src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
-					alt="CHII" width="296" height="140" decoding="async"
-					class="ls-is-cached lazyloaded is-loaded">
-			</a>
-				<noscript>
-					"<img
-						src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
-						alt="CHII" width="296" height="140" data-eio="1">"
-				</noscript></li>
+					alt="CHII" width="296" height="140" data-eio="1">"
+			</noscript></li>
 
-			<li class="chii2"><a href="https://www.anime-chiikawa.jp/"
-				target="_blank"> <img
+		<li class="chii2"><a href="https://www.anime-chiikawa.jp/"
+			target="_blank"> <img
+				src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
+				alt="CHII" width="296" height="140" decoding="async"
+				class="ls-is-cached lazyloaded is-loaded">
+		</a>
+			<noscript>
+				"<img
 					src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
-					alt="CHII" width="296" height="140" decoding="async"
-					class="ls-is-cached lazyloaded is-loaded">
-			</a>
-				<noscript>
-					"<img
-						src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
-						alt="CHII" width="296" height="140" data-eio="1">"
-				</noscript></li>
+					alt="CHII" width="296" height="140" data-eio="1">"
+			</noscript></li>
 
-			<li class="chii2"><a href="https://www.anime-chiikawa.jp/"
-				target="_blank"> <img
+		<li class="chii2"><a href="https://www.anime-chiikawa.jp/"
+			target="_blank"> <img
+				src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
+				alt="CHII" width="296" height="140" decoding="async"
+				class="ls-is-cached lazyloaded is-loaded">
+		</a>
+			<noscript>
+				"<img
 					src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
-					alt="CHII" width="296" height="140" decoding="async"
-					class="ls-is-cached lazyloaded is-loaded">
-			</a>
-				<noscript>
-					"<img
-						src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
-						alt="CHII" width="296" height="140" data-eio="1">"
-				</noscript></li>
+					alt="CHII" width="296" height="140" data-eio="1">"
+			</noscript></li>
 
-			<li class="chii2"><a href="https://www.anime-chiikawa.jp/"
-				target="_blank"> <img
+		<li class="chii2"><a href="https://www.anime-chiikawa.jp/"
+			target="_blank"> <img
+				src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
+				alt="CHII" width="296" height="140" decoding="async"
+				class="ls-is-cached lazyloaded is-loaded">
+		</a>
+
+			<noscript>
+				"<img
 					src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
-					alt="CHII" width="296" height="140" decoding="async"
-					class="ls-is-cached lazyloaded is-loaded">
-			</a>
+					alt="CHII" width="296" height="140" data-eio="1">"
+			</noscript></li>
 
-				<noscript>
-					"<img
-						src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
-						alt="CHII" width="296" height="140" data-eio="1">"
-				</noscript></li>
-
-			<li class="chii2"><a href="https://www.anime-chiikawa.jp/"
-				target="_blank"> <img
+		<li class="chii2"><a href="https://www.anime-chiikawa.jp/"
+			target="_blank"> <img
+				src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
+				alt="CHII" width="296" height="140" decoding="async"
+				class="ls-is-cached lazyloaded is-loaded">
+		</a>
+			<noscript>
+				"<img
 					src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
-					alt="CHII" width="296" height="140" decoding="async"
-					class="ls-is-cached lazyloaded is-loaded">
-			</a>
-				<noscript>
-					"<img
-						src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
-						alt="CHII" width="296" height="140" data-eio="1">"
-				</noscript></li>
+					alt="CHII" width="296" height="140" data-eio="1">"
+			</noscript></li>
 
-			<li class="chii2"><a href="https://www.anime-chiikawa.jp/"
-				target="_blank"> <img
+		<li class="chii2"><a href="https://www.anime-chiikawa.jp/"
+			target="_blank"> <img
+				src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
+				alt="CHII" width="296" height="140" decoding="async"
+				class="ls-is-cached lazyloaded is-loaded">
+		</a>
+			<noscript>
+				"<img
 					src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
-					alt="CHII" width="296" height="140" decoding="async"
-					class="ls-is-cached lazyloaded is-loaded">
-			</a>
-				<noscript>
-					"<img
-						src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
-						alt="CHII" width="296" height="140" data-eio="1">"
-				</noscript></li>
+					alt="CHII" width="296" height="140" data-eio="1">"
+			</noscript></li>
 
-			<li class="chii2"><a href="https://www.anime-chiikawa.jp/"
-				target="_blank"> <img
+		<li class="chii2"><a href="https://www.anime-chiikawa.jp/"
+			target="_blank"> <img
+				src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
+				alt="CHII" width="296" height="140" decoding="async"
+				class="ls-is-cached lazyloaded is-loaded">
+		</a>
+			<noscript>
+				"<img
 					src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
-					alt="CHII" width="296" height="140" decoding="async"
-					class="ls-is-cached lazyloaded is-loaded">
-			</a>
-				<noscript>
-					"<img
-						src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
-						alt="CHII" width="296" height="140" data-eio="1">"
-				</noscript></li>
+					alt="CHII" width="296" height="140" data-eio="1">"
+			</noscript></li>
 
-			<li class="chii2"><a href="https://www.anime-chiikawa.jp/"
-				target="_blank"> <img
+		<li class="chii2"><a href="https://www.anime-chiikawa.jp/"
+			target="_blank"> <img
+				src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
+				alt="CHII" width="296" height="140" decoding="async"
+				class="ls-is-cached lazyloaded is-loaded">
+		</a>
+			<noscript>
+				"<img
 					src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
-					alt="CHII" width="296" height="140" decoding="async"
-					class="ls-is-cached lazyloaded is-loaded">
-			</a>
-				<noscript>
-					"<img
-						src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
-						alt="CHII" width="296" height="140" data-eio="1">"
-				</noscript></li>
+					alt="CHII" width="296" height="140" data-eio="1">"
+			</noscript></li>
 
-			<li class="chii2"><a href="https://www.anime-chiikawa.jp/"
-				target="_blank"> <img
+		<li class="chii2"><a href="https://www.anime-chiikawa.jp/"
+			target="_blank"> <img
+				src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
+				alt="CHII" width="296" height="140" decoding="async"
+				class="ls-is-cached lazyloaded is-loaded">
+		</a>
+			<noscript>
+				"<img
 					src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
-					alt="CHII" width="296" height="140" decoding="async"
-					class="ls-is-cached lazyloaded is-loaded">
-			</a>
-				<noscript>
-					"<img
-						src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
-						alt="CHII" width="296" height="140" data-eio="1">"
-				</noscript></li>
+					alt="CHII" width="296" height="140" data-eio="1">"
+			</noscript></li>
 
-			<li class="chii2"><a href="https://www.anime-chiikawa.jp/"
-				target="_blank"> <img
+		<li class="chii2"><a href="https://www.anime-chiikawa.jp/"
+			target="_blank"> <img
+				src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
+				alt="CHII" width="296" height="140" decoding="async"
+				class="ls-is-cached lazyloaded is-loaded">
+		</a>
+			<noscript>
+				"<img
 					src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
-					alt="CHII" width="296" height="140" decoding="async"
-					class="ls-is-cached lazyloaded is-loaded">
-			</a>
-				<noscript>
-					"<img
-						src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
-						alt="CHII" width="296" height="140" data-eio="1">"
-				</noscript></li>
+					alt="CHII" width="296" height="140" data-eio="1">"
+			</noscript></li>
 
-			<li class="chii2"><a href="https://www.anime-chiikawa.jp/"
-				target="_blank"> <img
+		<li class="chii2"><a href="https://www.anime-chiikawa.jp/"
+			target="_blank"> <img
+				src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
+				alt="CHII" width="296" height="140" decoding="async"
+				class="ls-is-cached lazyloaded is-loaded">
+		</a>
+			<noscript>
+				"<img
 					src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
-					alt="CHII" width="296" height="140" decoding="async"
-					class="ls-is-cached lazyloaded is-loaded">
-			</a>
-				<noscript>
-					"<img
-						src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
-						alt="CHII" width="296" height="140" data-eio="1">"
-				</noscript></li>
+					alt="CHII" width="296" height="140" data-eio="1">"
+			</noscript></li>
 
-			<li class="chii2"><a href="https://www.anime-chiikawa.jp/"
-				target="_blank"> <img
+		<li class="chii2"><a href="https://www.anime-chiikawa.jp/"
+			target="_blank"> <img
+				src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
+				alt="CHII" width="296" height="140" decoding="async"
+				class="ls-is-cached lazyloaded is-loaded">
+		</a>
+			<noscript>
+				"<img
 					src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
-					alt="CHII" width="296" height="140" decoding="async"
-					class="ls-is-cached lazyloaded is-loaded">
-			</a>
-				<noscript>
-					"<img
-						src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
-						alt="CHII" width="296" height="140" data-eio="1">"
-				</noscript></li>
+					alt="CHII" width="296" height="140" data-eio="1">"
+			</noscript></li>
 
-			<li class="chii2"><a href="https://www.anime-chiikawa.jp/"
-				target="_blank"> <img
+		<li class="chii2"><a href="https://www.anime-chiikawa.jp/"
+			target="_blank"> <img
+				src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
+				alt="CHII" width="296" height="140" decoding="async"
+				class="ls-is-cached lazyloaded is-loaded">
+		</a>
+			<noscript>
+				"<img
 					src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
-					alt="CHII" width="296" height="140" decoding="async"
-					class="ls-is-cached lazyloaded is-loaded">
-			</a>
-				<noscript>
-					"<img
-						src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
-						alt="CHII" width="296" height="140" data-eio="1">"
-				</noscript></li>
+					alt="CHII" width="296" height="140" data-eio="1">"
+			</noscript></li>
 
-			<li class="chii2"><a href="https://www.anime-chiikawa.jp/"
-				target="_blank"> <img
+		<li class="chii2"><a href="https://www.anime-chiikawa.jp/"
+			target="_blank"> <img
+				src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
+				alt="CHII" width="296" height="140" decoding="async"
+				class="ls-is-cached lazyloaded is-loaded">
+		</a>
+			<noscript>
+				"<img
 					src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
-					alt="CHII" width="296" height="140" decoding="async"
-					class="ls-is-cached lazyloaded is-loaded">
-			</a>
-				<noscript>
-					"<img
-						src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
-						alt="CHII" width="296" height="140" data-eio="1">"
-				</noscript></li>
+					alt="CHII" width="296" height="140" data-eio="1">"
+			</noscript></li>
 
-			<li class="chii2"><a href="https://www.anime-chiikawa.jp/"
-				target="_blank"> <img
+		<li class="chii2"><a href="https://www.anime-chiikawa.jp/"
+			target="_blank"> <img
+				src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
+				alt="CHII" width="296" height="140" decoding="async"
+				class="ls-is-cached lazyloaded is-loaded">
+		</a>
+			<noscript>
+				"<img
 					src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
-					alt="CHII" width="296" height="140" decoding="async"
-					class="ls-is-cached lazyloaded is-loaded">
-			</a>
-				<noscript>
-					"<img
-						src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
-						alt="CHII" width="296" height="140" data-eio="1">"
-				</noscript></li>
+					alt="CHII" width="296" height="140" data-eio="1">"
+			</noscript></li>
 
-			<li class="chii2"><a href="https://www.anime-chiikawa.jp/"
-				target="_blank"> <img
+		<li class="chii2"><a href="https://www.anime-chiikawa.jp/"
+			target="_blank"> <img
+				src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
+				alt="CHII" width="296" height="140" decoding="async"
+				class="ls-is-cached lazyloaded is-loaded">
+		</a>
+			<noscript>
+				"<img
 					src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
-					alt="CHII" width="296" height="140" decoding="async"
-					class="ls-is-cached lazyloaded is-loaded">
-			</a>
-				<noscript>
-					"<img
-						src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
-						alt="CHII" width="296" height="140" data-eio="1">"
-				</noscript></li>
+					alt="CHII" width="296" height="140" data-eio="1">"
+			</noscript></li>
 
-			<li class="chii2"><a href="https://www.anime-chiikawa.jp/"
-				target="_blank"> <img
+		<li class="chii2"><a href="https://www.anime-chiikawa.jp/"
+			target="_blank"> <img
+				src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
+				alt="CHII" width="296" height="140" decoding="async"
+				class="ls-is-cached lazyloaded is-loaded">
+		</a>
+			<noscript>
+				"<img
 					src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
-					alt="CHII" width="296" height="140" decoding="async"
-					class="ls-is-cached lazyloaded is-loaded">
-			</a>
-				<noscript>
-					"<img
-						src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
-						alt="CHII" width="296" height="140" data-eio="1">"
-				</noscript></li>
+					alt="CHII" width="296" height="140" data-eio="1">"
+			</noscript></li>
 
-			<li class="chii2"><a href="https://www.anime-chiikawa.jp/"
-				target="_blank"> <img
+		<li class="chii2"><a href="https://www.anime-chiikawa.jp/"
+			target="_blank"> <img
+				src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
+				alt="CHII" width="296" height="140" decoding="async"
+				class="ls-is-cached lazyloaded is-loaded">
+		</a>
+			<noscript>
+				"<img
 					src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
-					alt="CHII" width="296" height="140" decoding="async"
-					class="ls-is-cached lazyloaded is-loaded">
-			</a>
-				<noscript>
-					"<img
-						src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
-						alt="CHII" width="296" height="140" data-eio="1">"
-				</noscript></li>
+					alt="CHII" width="296" height="140" data-eio="1">"
+			</noscript></li>
 
-			<li class="chii2"><a href="https://www.anime-chiikawa.jp/"
-				target="_blank"> <img
+		<li class="chii2"><a href="https://www.anime-chiikawa.jp/"
+			target="_blank"> <img
+				src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
+				alt="CHII" width="296" height="140" decoding="async"
+				class="ls-is-cached lazyloaded is-loaded">
+		</a>
+			<noscript>
+				"<img
 					src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
-					alt="CHII" width="296" height="140" decoding="async"
-					class="ls-is-cached lazyloaded is-loaded">
-			</a>
-				<noscript>
-					"<img
-						src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
-						alt="CHII" width="296" height="140" data-eio="1">"
-				</noscript></li>
+					alt="CHII" width="296" height="140" data-eio="1">"
+			</noscript></li>
 
-			<li class="chii2"><a href="https://www.anime-chiikawa.jp/"
-				target="_blank"> <img
+		<li class="chii2"><a href="https://www.anime-chiikawa.jp/"
+			target="_blank"> <img
+				src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
+				alt="CHII" width="296" height="140" decoding="async"
+				class="ls-is-cached lazyloaded is-loaded">
+		</a>
+			<noscript>
+				"<img
 					src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
-					alt="CHII" width="296" height="140" decoding="async"
-					class="ls-is-cached lazyloaded is-loaded">
-			</a>
-				<noscript>
-					"<img
-						src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
-						alt="CHII" width="296" height="140" data-eio="1">"
-				</noscript></li>
+					alt="CHII" width="296" height="140" data-eio="1">"
+			</noscript></li>
 
-			<li class="chii2"><a href="https://www.anime-chiikawa.jp/"
-				target="_blank"> <img
+		<li class="chii2"><a href="https://www.anime-chiikawa.jp/"
+			target="_blank"> <img
+				src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
+				alt="CHII" width="296" height="140" decoding="async"
+				class="ls-is-cached lazyloaded is-loaded">
+		</a>
+			<noscript>
+				"<img
 					src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
-					alt="CHII" width="296" height="140" decoding="async"
-					class="ls-is-cached lazyloaded is-loaded">
-			</a>
-				<noscript>
-					"<img
-						src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
-						alt="CHII" width="296" height="140" data-eio="1">"
-				</noscript></li>
+					alt="CHII" width="296" height="140" data-eio="1">"
+			</noscript></li>
 
-			<li class="chii2"><a href="https://www.anime-chiikawa.jp/"
-				target="_blank"> <img
+		<li class="chii2"><a href="https://www.anime-chiikawa.jp/"
+			target="_blank"> <img
+				src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
+				alt="CHII" width="296" height="140" decoding="async"
+				class="ls-is-cached lazyloaded is-loaded">
+		</a>
+			<noscript>
+				"<img
 					src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
-					alt="CHII" width="296" height="140" decoding="async"
-					class="ls-is-cached lazyloaded is-loaded">
-			</a>
-				<noscript>
-					"<img
-						src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
-						alt="CHII" width="296" height="140" data-eio="1">"
-				</noscript></li>
+					alt="CHII" width="296" height="140" data-eio="1">"
+			</noscript></li>
 
-			<li class="chii2"><a href="https://www.anime-chiikawa.jp/"
-				target="_blank"> <img
+		<li class="chii2"><a href="https://www.anime-chiikawa.jp/"
+			target="_blank"> <img
+				src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
+				alt="CHII" width="296" height="140" decoding="async"
+				class="ls-is-cached lazyloaded is-loaded">
+		</a>
+			<noscript>
+				"<img
 					src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
-					alt="CHII" width="296" height="140" decoding="async"
-					class="ls-is-cached lazyloaded is-loaded">
-			</a>
-				<noscript>
-					"<img
-						src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
-						alt="CHII" width="296" height="140" data-eio="1">"
-				</noscript></li>
+					alt="CHII" width="296" height="140" data-eio="1">"
+			</noscript></li>
 
-			<li class="chii2"><a href="https://www.anime-chiikawa.jp/"
-				target="_blank"> <img
+		<li class="chii2"><a href="https://www.anime-chiikawa.jp/"
+			target="_blank"> <img
+				src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
+				alt="CHII" width="296" height="140" decoding="async"
+				class="ls-is-cached lazyloaded is-loaded">
+		</a>
+			<noscript>
+				"<img
 					src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
-					alt="CHII" width="296" height="140" decoding="async"
-					class="ls-is-cached lazyloaded is-loaded">
-			</a>
-				<noscript>
-					"<img
-						src="https://chiikawa-biyori.com/wp-content/uploads/2021/11/wallpaper.jpg"
-						alt="CHII" width="296" height="140" data-eio="1">"
-				</noscript></li>
-		</ul>
-<ul class="circles">
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-</ul>
-		<div id="footer">
-			<table>
-				<tr>
-					<td id="footLeft"></td>
-					<td id="footCenter"></td>
-					<td id="footRight"></td>
-				</tr>
-			</table>
-		</div>
+					alt="CHII" width="296" height="140" data-eio="1">"
+			</noscript></li>
+	</ul>
+	<ul class="circles">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+	<span class="music">パジャマパーティーズのうた(再生できません)</span>
+	<audio src="C:\Users\school-29\Downloads\パジャマパーティーズのうた.mp3" controls></audio>
+
 	</div>
 </html>
-	<footer>
-		<ul class="footer-menu">
-			<li>home ｜</li>
-			<li>about ｜</li>
-			<li>service ｜</li>
-			<li>Contact Us</li>
-		</ul>
-		<p>All rights reserved by dmmwebcampmedia.</p>
-	</footer>
+<footer>
+	<ul class="footer-menu">
+		<li><a href="https://www.anime-chiikawa.jp/">home ｜</a></li>
+		<li>about ｜</li>
+		<li>service ｜</li>
+		<li>Contact Us</li>
+	</ul>
+	<p>All rights reserved by dmmwebcampmedia.</p>
+</footer>
 </body>

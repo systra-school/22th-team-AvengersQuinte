@@ -14,30 +14,31 @@
 <title>ログイン画面Login</title>
 <link href="/kikin/pages/css/common.css" rel="stylesheet"
 	type="text/css" />
-	
+
 </head>
 <body>
-<%
-if(request.getAttribute("error_msg")!=null){
-	String error_msg = (String)request.getAttribute("error_msg");
-%>
+	<%
+	if (request.getAttribute("error_msg") != null) {
+		String error_msg = (String) request.getAttribute("error_msg");
+	%>
 
-<script type="text/javascript">
-    var msg = "<%=error_msg%>";
-    alert(msg);
-<% } %>
-
-</script>
+	<script type="text/javascript">
+    var msg = "<%=error_msg%>
+		";
+		alert(msg);
+	<%}%>
+		
+	</script>
 	<div class="bg"></div>
 	<div class="bg bg2"></div>
 	<div class="bg bg3"></div>
 	<div class="content">
 		<div id="wrapper">
-		
+
 			<div id="header">
 				<table>
 					<tr>
-			
+
 						<td id="headLeft"></td>
 						<td id="headCenter">ログイン</td>
 						<td id="headRight"></td>
@@ -45,18 +46,18 @@ if(request.getAttribute("error_msg")!=null){
 				</table>
 			</div>
 
- <ul class="circles">
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-</ul>
- 
+			<ul class="circles">
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+
 
 			<div id="gymBody">
 				<div align="center">
