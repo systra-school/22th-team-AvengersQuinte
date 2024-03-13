@@ -13,6 +13,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -143,6 +144,10 @@ public class ShukkinKibouKakuninSearchAction extends ShukkinKibouAbstractAction{
             // 社員名
             String shainId = "";
             String shainName = "";
+            String d = "";
+            String d2 = "";
+            String c = "";
+            String c2 = "";
 
             int index = 0;
             for (int i = 0; i < methods.length; i++) {
@@ -151,7 +156,15 @@ public class ShukkinKibouKakuninSearchAction extends ShukkinKibouAbstractAction{
                     if (index < kakuninDtoList.size()) {
                         // Dtoのリストのサイズ以上のとき
                         ShukkinKibouKakuninDto kibouKakuninDto = kakuninDtoList.get(index);
-
+                        if (Objects.nonNull(kibouKakuninDto.getKibouShiftId())) {
+    						d = methods[i].getName();
+    						d2 = d.substring(9);
+    						c = kibouKakuninDto.getYearMonthDay();
+    						c2 = c.substring(6);
+    						if (!d2.equals(c2)) {
+    							continue;
+    						}
+    					}
                         shainId = kibouKakuninDto.getShainId();
                         shainName = kibouKakuninDto.getShainName();
 
