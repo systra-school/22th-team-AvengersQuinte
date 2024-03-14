@@ -2,6 +2,8 @@ package business.logic.utils;
 
 import java.sql.SQLException;
 import java.sql.Timestamp;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -179,22 +181,26 @@ public class CommonUtils {
 
         // ＩＤの数字部分
         String numId = maxId;
+       maxId = maxId.substring(0,2);
+       numId = numId.substring(2);
+        
         int intNumId = Integer.parseInt(numId);
 
         if (intNumId >= 9999) {
             throw new CommonException("登録ＩＤが最大を超える");
         }
 
-        StringBuffer strBuf = new StringBuffer();
+        StringBuffer strBuf = new StringBuffer(maxId);
         //strBuf.append(maxId);
 
         // ＩＤ加算処理
         intNumId ++;
+        
 
         // 先頭0埋め処理
-//        DecimalFormat df = new DecimalFormat();
-//        df.applyLocalizedPattern("0000");
-        strBuf.append(intNumId);
+        NumberFormat df = new DecimalFormat("0000");
+      String strNum = String.valueOf(df.format(intNumId));
+        strBuf.append(strNum);
 
         return strBuf.toString();
 
