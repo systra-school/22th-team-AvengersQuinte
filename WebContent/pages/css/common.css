@@ -116,7 +116,9 @@ html{
 	height: 578px;
 	overflow: hidden;
 }
-
+.chii_gif{
+	text-align: center;
+}
 .chii {
 	display: flex;
 	width: auto;
