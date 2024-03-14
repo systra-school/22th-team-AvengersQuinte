@@ -13,11 +13,10 @@
  */
 function checkHankakuKana(str) {
 
-    if (str.match(/^[±-İ]*$/)) {
-        return true;
-    }
+var a = /^[¦-ß]*$/.test(str);
+    
 
-    return false;
+    return a;
 }
 
 /**
