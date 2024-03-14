@@ -65,10 +65,10 @@
 					<div>ID・パスワードを入力してください。</div>
 					<html:form action="/login"
 						onsubmit="return validateLoginForm(this)">
-						<html:text property="shainId" size="16" value="sh0001" />
+						<html:text property="shainId" size="16"/>
 						<br />
 						<html:password property="password" size="16" redisplay="false"
-							value="sh0001" />
+						/>
 						<br />
 						<br />
 						<html:submit property="submit" value="送信" />
